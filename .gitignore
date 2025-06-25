@@ -1,0 +1,9 @@
+# Visual Studio
+.vs/
+
+# Maven
+target/
+
+# jiné dočasné soubory
+*.log
+*.tmp
