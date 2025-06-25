@@ -1,0 +1,60 @@
+﻿@model HotelMVCIs.DTOs.PaymentDTO
+@using HotelMVCIs.Models // Důležité pro Html.GetEnumSelectList
+
+@{
+    ViewData["Title"] = "Upravit platbu";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationId" class="control-label"></label>
+                <select asp-for="ReservationId" class="form-control" asp-items="@Model.ReservationsList">
+                    <option value="">-- Vyberte rezervaci --</option>
+                </select>
+                <span asp-validation-for="ReservationId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PaymentDate" class="control-label"></label>
+                <input asp-for="PaymentDate" class="form-control" type="date" />
+                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PaymentMethod" class="control-label"></label>
+                <select asp-for="PaymentMethod" class="form-control" asp-items="Html.GetEnumSelectList<PaymentMethod>()"></select> @* <--- ZMĚNA ZDE *@
+                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Notes" class="control-label"></label>
+                <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Uložit změny" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Zpět na seznam</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

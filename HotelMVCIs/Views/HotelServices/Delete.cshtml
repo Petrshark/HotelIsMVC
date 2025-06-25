@@ -1,0 +1,33 @@
+﻿@model HotelMVCIs.DTOs.HotelServiceDTO
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Smazat službu";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3 class="text-danger">Opravdu si přejete smazat tuto službu?</h3>
+<div>
+    <h4>Služba hotelu</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Price)</dt>
+        <dd class="col-sm-9">@Model.Price.ToString("C", new CultureInfo("cs-CZ"))</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IsActive)</dt>
+        <dd class="col-sm-9">@(Model.IsActive ? "Ano" : "Ne")</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Smazat" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Zrušit</a>
+    </form>
+</div>

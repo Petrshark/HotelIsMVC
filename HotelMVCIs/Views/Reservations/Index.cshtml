@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HotelMVCIs.DTOs.ReservationDTO> 
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Seznam rezervací";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Vytvořit novou rezervaci</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.RoomNumber)</th> @* <--- NOVÝ DisplayNameFor *@
+            <th>@Html.DisplayNameFor(model => model.GuestFullName)</th> @* <--- NOVÝ DisplayNameFor *@
+            <th>@Html.DisplayNameFor(model => model.CheckInDate)</th>
+            <th>@Html.DisplayNameFor(model => model.CheckOutDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalPrice)</th>
+            <th>@Html.DisplayNameFor(model => model.RemainingBalance)</th> @* <--- NOVÝ HLAVIČKOVÝ SLOUPEC *@
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>Akce</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.RoomNumber 
+                @if (!string.IsNullOrEmpty(item.RoomTypeName))
+                {
+                    <small>(@item.RoomTypeName)</small>
+                }
+            </td>
+            <td>@item.GuestFullName</td>
+            <td>@item.CheckInDate.ToShortDateString()</td>
+            <td>@item.CheckOutDate.ToShortDateString()</td>
+            <td>@item.TotalPrice.ToString("C", new System.Globalization.CultureInfo("cs-CZ"))</td>
+            <td>@item.RemainingBalance.ToString("C", new System.Globalization.CultureInfo("cs-CZ"))</td> @* <--- ZOBRAZENÍ ZBÝVAJÍCÍ ČÁSTKY *@
+            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Upravit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Smazat</a>
+                <a asp-controller="Payments" asp-action="Create" asp-route-reservationId="@item.Id" class="btn btn-sm btn-outline-info">Přidat platbu</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

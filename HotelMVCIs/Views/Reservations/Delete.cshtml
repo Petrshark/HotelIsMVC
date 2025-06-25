@@ -1,0 +1,32 @@
+﻿@model HotelMVCIs.Models.Reservation
+
+@{
+    ViewData["Title"] = "Smazat rezervaci";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3 class="text-danger">Opravdu si přejete smazat tuto rezervaci?</h3>
+<div>
+    <h4>Rezervace</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Host</dt>
+        <dd class="col-sm-9">@Model.Guest.FirstName @Model.Guest.LastName</dd>
+
+        <dt class="col-sm-3">Pokoj</dt>
+        <dd class="col-sm-9">@Model.Room.RoomNumber (@Model.Room.RoomType.Name)</dd>
+
+        <dt class="col-sm-3">Příjezd</dt>
+        <dd class="col-sm-9">@Model.CheckInDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Status)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Smazat" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Zrušit</a>
+    </form>
+</div>

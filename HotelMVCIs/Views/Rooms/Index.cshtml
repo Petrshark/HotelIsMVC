@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HotelMVCIs.Models.Room>
+
+@{
+    ViewData["Title"] = "Seznam pokojů";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Vytvořit nový pokoj</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Číslo pokoje</th>
+            <th>Typ pokoje</th>
+            <th>Cena za noc</th>
+            <th>Akce</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@item.RoomNumber</td>
+                    <td>@item.RoomType.Name</td>
+                    <td>@item.PricePerNight.ToString("C", new System.Globalization.CultureInfo("cs-CZ"))</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Upravit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Smazat</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

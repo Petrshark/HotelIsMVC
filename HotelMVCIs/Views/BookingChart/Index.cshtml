@@ -1,0 +1,210 @@
+﻿@model HotelMVCIs.DTOs.BookingChartDTO
+@using System.Globalization
+@using HotelMVCIs.Models
+
+@{
+    ViewData["Title"] = "Rezervační štafle";
+    var daysInMonth = DateTime.DaysInMonth(Model.CurrentMonth.Year, Model.CurrentMonth.Month);
+    var prevMonth = Model.CurrentMonth.AddMonths(-1);
+    var nextMonth = Model.CurrentMonth.AddMonths(1);
+    var today = DateTime.Today;
+}
+
+<style>
+    .booking-chart-container {
+        overflow-x: auto;
+        border: 1px solid #dee2e6;
+        border-radius: .5rem;
+    }
+
+    .booking-chart {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .booking-chart th, .booking-chart td {
+        border: 1px solid #dee2e6;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .booking-chart thead th {
+        background-color: #f8f9fa;
+        font-size: 12px;
+        height: 60px;
+    }
+
+    .room-header-cell {
+        width: 150px;
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: #f8f9fa;
+    }
+
+    .day-sat, .day-sun {
+        background-color: #f8f9fa;
+    }
+
+    .day-today {
+        box-shadow: inset 0 0 0 2px #007bff;
+    }
+
+    .timeline-cell {
+        position: relative;
+        padding: 0;
+    }
+
+    .day-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .day-grid-cell {
+        flex: 1;
+        border-right: 1px solid #e9ecef;
+    }
+    .day-grid-cell:last-child {
+        border-right: none;
+    }
+
+    .reservation-bar {
+        position: absolute;
+        height: 34px;
+        color: white;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        overflow: hidden;
+        padding: 0 10px;
+        box-sizing: border-box;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        text-decoration: none;
+    }
+
+    .reservation-bar.status-confirmed {
+        background-color: #28a745;
+    }
+    .reservation-bar.status-checkedin {
+        background-color: #0d6efd;
+    }
+     .reservation-bar.status-checkedout {
+        background-color: #6c757d;
+    }
+     .reservation-bar.status-option {
+        background-color: #fd7e14;
+    }
+
+
+    .reservation-bar:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        filter: brightness(1.1);
+    }
+
+    .chart-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .chart-toolbar h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #495057;
+    }
+
+    .chart-toolbar .btn-nav {
+        border-radius: 50px;
+        font-weight: 500;
+        padding: .5rem 1rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .chart-toolbar .btn-nav:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
+
+<div class="chart-toolbar">
+    <a asp-action="Index" asp-route-year="@prevMonth.Year" asp-route-month="@prevMonth.Month" class="btn btn-outline-primary btn-nav">&laquo; Předchozí měsíc</a>
+    <h2>@Model.CurrentMonth.ToString("MMMM yyyy", new CultureInfo("cs-CZ"))</h2>
+    <a asp-action="Index" asp-route-year="@nextMonth.Year" asp-route-month="@nextMonth.Month" class="btn btn-outline-primary btn-nav">Následující měsíc &raquo;</a>
+</div>
+
+
+<div class="booking-chart-container">
+    <table class="booking-chart">
+        <thead>
+            <tr>
+                <th class="room-header-cell">Pokoj</th>
+                @for (int day = 1; day <= daysInMonth; day++)
+                {
+                        <th class="day-header @(new DateTime(Model.CurrentMonth.Year, Model.CurrentMonth.Month, day) == today ? "day-today" : "")">
+                        @day<br>
+                            <small>@(new DateTime(Model.CurrentMonth.Year, Model.CurrentMonth.Month, day).ToString("ddd", new CultureInfo("cs-CZ")))</small>
+                        </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var roomRow in Model.RoomRows)
+            {
+                var maxLanes = roomRow.Reservations.Any() ? roomRow.Reservations.Max(r => r.LaneIndex) + 1 : 1;
+                var rowHeight = maxLanes * 45;
+
+                    <tr style="height: @(rowHeight)px">
+                        <th class="room-header-cell" style="height: @(rowHeight)px">
+                        @roomRow.RoomNumber
+                            <br>
+                            <small>@roomRow.RoomTypeName</small>
+                        </th>
+
+                        <td class="timeline-cell" colspan="@daysInMonth">
+                            <div class="day-grid">
+                            @for (int day = 1; day <= daysInMonth; day++)
+                            {
+                                var date = new DateTime(Model.CurrentMonth.Year, Model.CurrentMonth.Month, day);
+                                var dayClass = "";
+                                if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) dayClass = "day-sat";
+                                    <div class="day-grid-cell @dayClass"></div>
+                            }
+                            </div>
+
+                        @foreach (var res in roomRow.Reservations)
+                        {
+                            var topPosition = res.LaneIndex * 45 + 5;
+                            var leftPercent = ((double)(res.StartDay - 1) / daysInMonth) * 100;
+                            var widthPercent = ((double)res.SpanDays / daysInMonth) * 100;
+                            var statusClass = "status-" + res.Status.ToString().ToLower();
+
+                                    <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@res.ReservationId" class="reservation-bar @statusClass"
+                                        style="top: @(topPosition)px; left: @(leftPercent.ToString("F4", CultureInfo.InvariantCulture))%; width: @(widthPercent.ToString("F4", CultureInfo.InvariantCulture))%;" 
+                                        title="@res.GuestName (@res.Status)">
+                                @res.GuestName
+                                     </a>
+                        }
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
