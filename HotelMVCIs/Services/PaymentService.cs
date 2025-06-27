@@ -3,7 +3,11 @@ using HotelMVCIs.DTOs;
 using HotelMVCIs.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+using System;
 
 namespace HotelMVCIs.Services
 {
@@ -16,57 +20,53 @@ namespace HotelMVCIs.Services
             _context = context;
         }
 
-        // ZMĚNA: GetAllAsync bude nyní vracet IEnumerable<PaymentDTO> a naplní nové vlastnosti
-        public async Task<IEnumerable<PaymentDTO>> GetAllAsync() // <--- Návratový typ je stále PaymentDTO
+        public async Task<IEnumerable<PaymentDTO>> GetAllAsync()
         {
-            // Načteme všechny platby s jejich souvisejícími rezervacemi, hosty a pokoji
             var payments = await _context.Payments
-                .Include(p => p.Reservation)
-                    .ThenInclude(r => r.Guest)
-                .Include(p => p.Reservation)
-                    .ThenInclude(r => r.Room)
+                .Include(p => p.Reservation).ThenInclude(r => r.Guest)
+                .Include(p => p.Reservation).ThenInclude(r => r.Room)
+                .Include(p => p.Reservation).ThenInclude(r => r.ReservationItems)
                 .OrderByDescending(p => p.PaymentDate)
                 .ThenByDescending(p => p.Id)
                 .ToListAsync();
 
-            var paymentDTOs = new List<PaymentDTO>();
+            var relevantReservationIds = payments.Select(p => p.ReservationId).Distinct().ToList();
 
-            foreach (var payment in payments)
+            var totalPaymentsByReservation = await _context.Payments
+                .Where(p => relevantReservationIds.Contains(p.ReservationId))
+                .GroupBy(p => p.ReservationId)
+                .Select(g => new { ReservationId = g.Key, TotalPaid = g.Sum(p => p.Amount) })
+                .ToDictionaryAsync(x => x.ReservationId, x => x.TotalPaid);
+
+            var paymentDTOs = payments.Select(payment =>
             {
-                // Pro každou rezervaci (ke které se platba vztahuje) zjistíme celkovou zaplacenou částku
-                var totalPaidForReservation = await GetTotalPaidForReservationAsync(payment.ReservationId);
-                var remainingBalanceForReservation = payment.Reservation.TotalPrice - totalPaidForReservation;
+                totalPaymentsByReservation.TryGetValue(payment.ReservationId, out var totalPaidForReservation);
+                var servicesPrice = payment.Reservation.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = payment.Reservation.TotalPrice + servicesPrice;
 
-                paymentDTOs.Add(new PaymentDTO
+                return new PaymentDTO
                 {
                     Id = payment.Id,
                     ReservationId = payment.ReservationId,
-
-                    // --- NAPLNĚNÍ NOVÝCH VLASTNOSTÍ V DTO ---
                     ReservationDisplay = $"#{payment.Reservation.Id} - Pokoj: {payment.Reservation.Room.RoomNumber} ({payment.Reservation.Guest.FirstName} {payment.Reservation.Guest.LastName})",
-                    ReservationTotalPrice = payment.Reservation.TotalPrice,
+                    ReservationTotalPrice = grandTotal,
                     ReservationTotalPaid = totalPaidForReservation,
-                    ReservationRemainingBalance = remainingBalanceForReservation,
-                    // -----------------------------------------
-
+                    ReservationRemainingBalance = grandTotal - totalPaidForReservation,
                     Amount = payment.Amount,
                     PaymentDate = payment.PaymentDate,
                     PaymentMethod = payment.PaymentMethod,
                     Notes = payment.Notes
-                });
-            }
+                };
+            }).ToList();
 
             return paymentDTOs;
         }
 
-        public async Task<PaymentDTO> GetByIdAsync(int id)
+        public async Task<PaymentDTO?> GetByIdAsync(int id)
         {
             var payment = await _context.Payments.FindAsync(id);
             if (payment == null) return null;
 
-            // Zde nenačítáme ReservationDisplay, TotalPrice, TotalPaid nebo RemainingBalance,
-            // protože pro formuláře Edit/Create to obvykle není nutné a načítá se to dynamicky
-            // (např. TotalPrice pro validaci, RemainingBalance se přepočítává v Controlleru Create GET)
             return new PaymentDTO
             {
                 Id = payment.Id,
@@ -85,7 +85,7 @@ namespace HotelMVCIs.Services
                 ReservationId = dto.ReservationId,
                 Amount = dto.Amount,
                 PaymentDate = dto.PaymentDate,
-                PaymentMethod = dto.PaymentMethod, // <--- Bez změny, typ se shodne
+                PaymentMethod = dto.PaymentMethod,
                 Notes = dto.Notes
             };
             _context.Payments.Add(payment);
@@ -100,9 +100,8 @@ namespace HotelMVCIs.Services
                 payment.ReservationId = dto.ReservationId;
                 payment.Amount = dto.Amount;
                 payment.PaymentDate = dto.PaymentDate;
-                payment.PaymentMethod = dto.PaymentMethod; // <--- Bez změny, typ se shodne
+                payment.PaymentMethod = dto.PaymentMethod;
                 payment.Notes = dto.Notes;
-
                 _context.Update(payment);
                 await _context.SaveChangesAsync();
             }
@@ -123,28 +122,52 @@ namespace HotelMVCIs.Services
             return await _context.Payments.AnyAsync(e => e.Id == id);
         }
 
-        public async Task<Payment> GetPaymentForDeleteAsync(int id)
+        public async Task<Payment?> GetPaymentForDeleteAsync(int id)
         {
             return await _context.Payments
-                .Include(p => p.Reservation)
-                    .ThenInclude(r => r.Guest)
-                .Include(p => p.Reservation)
-                    .ThenInclude(r => r.Room)
+                .Include(p => p.Reservation).ThenInclude(r => r.Guest)
+                .Include(p => p.Reservation).ThenInclude(r => r.Room)
                 .FirstOrDefaultAsync(m => m.Id == id);
         }
 
         public async Task<IEnumerable<SelectListItem>> GetReservationsForDropdownAsync()
         {
-            return await _context.Reservations
+            var reservations = await _context.Reservations
+                .Where(r => r.Status != ReservationStatus.Cancelled)
                 .Include(r => r.Guest)
                 .Include(r => r.Room)
-                .Select(r => new SelectListItem
-                {
-                    Value = r.Id.ToString(),
-                    Text = $"Rezervace #{r.Id} - Pokoj: {r.Room.RoomNumber} - Host: {r.Guest.FirstName} {r.Guest.LastName} ({r.CheckInDate.ToShortDateString()} - {r.CheckOutDate.ToShortDateString()}) - Celková cena: {r.TotalPrice.ToString("C", new CultureInfo("cs-CZ"))}"
-                })
-                .OrderByDescending(item => item.Value)
+                .Include(r => r.ReservationItems)
+                .OrderByDescending(r => r.Id)
                 .ToListAsync();
+
+            var activeReservationIds = reservations.Select(r => r.Id).ToList();
+
+            var totalPaymentsByReservation = await _context.Payments
+                .Where(p => activeReservationIds.Contains(p.ReservationId))
+                .GroupBy(p => p.ReservationId)
+                .Select(g => new { ReservationId = g.Key, TotalPaid = g.Sum(p => p.Amount) })
+                .ToDictionaryAsync(x => x.ReservationId, x => x.TotalPaid);
+
+            var dropdownItems = new List<SelectListItem>();
+            var culture = new CultureInfo("cs-CZ");
+
+            foreach (var reservation in reservations)
+            {
+                var servicesPrice = reservation.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = reservation.TotalPrice + servicesPrice;
+                totalPaymentsByReservation.TryGetValue(reservation.Id, out var totalPaid);
+                var remainingBalance = grandTotal - totalPaid;
+                string text = $"#{reservation.Id} - {reservation.Guest.LastName}, {reservation.Room.RoomNumber} ({reservation.CheckInDate:dd.MM}) - zbývá {remainingBalance.ToString("C", culture)}";
+
+                dropdownItems.Add(new SelectListItem
+                {
+                    Value = reservation.Id.ToString(),
+                    Text = text,
+                    Disabled = reservation.Status == ReservationStatus.Cancelled
+                });
+            }
+
+            return dropdownItems;
         }
 
         public async Task<decimal> GetTotalPaidForReservationAsync(int reservationId)
@@ -154,13 +177,32 @@ namespace HotelMVCIs.Services
                 .SumAsync(p => p.Amount);
         }
 
-        public async Task<decimal> GetRemainingBalanceForReservationAsync(int reservationId)
+        public async Task<PaymentReportDTO> GetPaymentReportAsync(DateTime startDate, DateTime endDate)
         {
-            var reservation = await _context.Reservations.FindAsync(reservationId);
-            if (reservation == null) return 0;
+            var inclusiveEndDate = endDate.AddDays(1);
 
-            var totalPaid = await GetTotalPaidForReservationAsync(reservationId);
-            return reservation.TotalPrice - totalPaid;
+            var entries = await _context.Payments
+                .Where(p => p.PaymentDate >= startDate && p.PaymentDate < inclusiveEndDate)
+                .GroupBy(p => new { Date = p.PaymentDate.Date, p.PaymentMethod })
+                .Select(g => new ReportEntryDTO
+                {
+                    Date = g.Key.Date,
+                    PaymentMethod = g.Key.PaymentMethod,
+                    TotalAmount = g.Sum(p => p.Amount)
+                })
+                .OrderBy(e => e.Date)
+                .ThenBy(e => e.PaymentMethod)
+                .ToListAsync();
+
+            var report = new PaymentReportDTO
+            {
+                StartDate = startDate,
+                EndDate = endDate,
+                Entries = entries,
+                GrandTotal = entries.Sum(e => e.TotalAmount)
+            };
+
+            return report;
         }
     }
 }

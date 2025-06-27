@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelMVCIs.DTOs
 {
@@ -29,22 +30,22 @@ namespace HotelMVCIs.DTOs
         [StringLength(20)]
         [Phone(ErrorMessage = "Zadejte platné telefonní číslo.")]
         [Display(Name = "Telefonní číslo")]
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 
         [StringLength(100)]
         [Display(Name = "Adresa (ulice a č.p.)")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [StringLength(50)]
         [Display(Name = "Město")]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         [StringLength(20)]
         [Display(Name = "PSČ")]
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
         [StringLength(50)]
         [Display(Name = "Národnost")]
-        public string Nationality { get; set; }
+        public string? Nationality { get; set; }
     }
 }

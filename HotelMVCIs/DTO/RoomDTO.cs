@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace HotelMVCIs.DTOs
 {
@@ -17,13 +18,13 @@ namespace HotelMVCIs.DTOs
         public int RoomTypeId { get; set; }
 
         [Required(ErrorMessage = "Cena je povinná.")]
-        [Range(0.01, 100000.00, ErrorMessage = "Cena musí být platné číslo.")]
+        [Range(0.01, 100000.00)]
         [Display(Name = "Cena za noc")]
         public decimal PricePerNight { get; set; }
 
         [StringLength(500)]
         [Display(Name = "Popis")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public IEnumerable<SelectListItem> RoomTypesList { get; set; } = new List<SelectListItem>();
     }

@@ -1,18 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelMVCIs.Services;
-using HotelMVCIs.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
     public class BookingChartController : Controller
     {
         private readonly BookingChartService _chartService;
-        private readonly ReservationService _reservationService;
 
-        public BookingChartController(BookingChartService chartService, ReservationService reservationService)
+        public BookingChartController(BookingChartService chartService)
         {
             _chartService = chartService;
-            _reservationService = reservationService;
         }
 
         public async Task<IActionResult> Index(int? year, int? month)
@@ -25,8 +24,8 @@ namespace HotelMVCIs.Controllers
             }
             else
             {
-                var earliestDate = await _reservationService.GetEarliestReservationDateAsync();
-                dateToShow = earliestDate ?? DateTime.Now;
+                // Zjednodušená verze: Vždy zobrazit aktuální měsíc
+                dateToShow = DateTime.Now;
             }
 
             var chartData = await _chartService.GetChartDataAsync(dateToShow.Year, dateToShow.Month);

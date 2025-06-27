@@ -7,16 +7,16 @@ namespace HotelMVCIs.DTOs
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Název služby je povinný.")]
-        [StringLength(100, ErrorMessage = "Název služby může mít maximálně 100 znaků.")]
+        [StringLength(100)]
         [Display(Name = "Název služby")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Cena je povinná.")]
-        [Range(0.01, 100000.00, ErrorMessage = "Cena musí být platné číslo a větší než 0.")]
+        [Range(0.01, 100000.00)]
         [Display(Name = "Cena")]
         public decimal Price { get; set; }
 
-        [StringLength(500, ErrorMessage = "Popis může mít maximálně 500 znaků.")]
+        [StringLength(500)]
         [Display(Name = "Popis")]
         public string? Description { get; set; }
 

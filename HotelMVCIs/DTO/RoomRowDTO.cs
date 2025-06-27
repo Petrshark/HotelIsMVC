@@ -1,4 +1,6 @@
-﻿namespace HotelMVCIs.DTOs
+﻿using System.Collections.Generic;
+
+namespace HotelMVCIs.DTOs
 {
     public class RoomRowDTO
     {

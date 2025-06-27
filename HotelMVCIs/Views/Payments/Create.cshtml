@@ -1,5 +1,5 @@
 ﻿@model HotelMVCIs.DTOs.PaymentDTO
-@using HotelMVCIs.Models // Důležité pro Html.GetEnumSelectList
+@using HotelMVCIs.Models
 
 @{
     ViewData["Title"] = "Přidat novou platbu";
@@ -34,7 +34,7 @@
 
             <div class="form-group mb-3">
                 <label asp-for="PaymentMethod" class="control-label"></label>
-                <select asp-for="PaymentMethod" class="form-control" asp-items="Html.GetEnumSelectList<PaymentMethod>()"></select> @* <--- ZMĚNA ZDE *@
+                <select asp-for="PaymentMethod" class="form-control" asp-items="Html.GetEnumSelectList<PaymentMethod>()"></select>
                 <span asp-validation-for="PaymentMethod" class="text-danger"></span>
             </div>
 

@@ -1,21 +1,15 @@
-using System.Diagnostics;
-using HotelMVCIs.Models;
+﻿using HotelMVCIs.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace HotelMVCIs.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
-            return View();
+            // Hlavní stránka přesměrovává na nejdůležitější pohled - rezervační tabuli
+            return RedirectToAction("Index", "BookingChart");
         }
 
         public IActionResult Privacy()

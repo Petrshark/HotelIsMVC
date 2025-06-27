@@ -2,6 +2,9 @@
 using HotelMVCIs.DTOs;
 using HotelMVCIs.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Services
 {
@@ -22,7 +25,7 @@ namespace HotelMVCIs.Services
                 .ToListAsync();
         }
 
-        public async Task<RoomDTO> GetByIdAsync(int id)
+        public async Task<RoomDTO?> GetByIdAsync(int id)
         {
             var room = await _context.Rooms.FindAsync(id);
             if (room == null) return null;
@@ -37,7 +40,7 @@ namespace HotelMVCIs.Services
             };
         }
 
-        public async Task<Room> GetRoomForDeleteAsync(int id)
+        public async Task<Room?> GetRoomForDeleteAsync(int id)
         {
             return await _context.Rooms
                 .Include(p => p.RoomType)

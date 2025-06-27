@@ -1,4 +1,5 @@
 ﻿@model HotelMVCIs.Models.Room
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Smazat pokoj";
@@ -18,7 +19,7 @@
         <dd class="col-sm-9">@Model.RoomType.Name</dd>
 
         <dt class="col-sm-3">Cena za noc</dt>
-        <dd class="col-sm-9">@Model.PricePerNight.ToString("C", new System.Globalization.CultureInfo("cs-CZ"))</dd>
+        <dd class="col-sm-9">@Model.PricePerNight.ToString("C", new CultureInfo("cs-CZ"))</dd>
     </dl>
 
     <form asp-action="Delete">

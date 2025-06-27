@@ -6,7 +6,6 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
 <h3 class="text-danger">Opravdu si přejete smazat tuto platbu?</h3>
 <div>
     <h4>Platba</h4>
@@ -24,7 +23,7 @@
         <dd class="col-sm-9">@Model.PaymentDate.ToShortDateString()</dd>
 
         <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd> @* <--- ZOBRAZENÍ Z ENUM *@
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PaymentMethod)</dd>
 
         <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Notes)</dt>
         <dd class="col-sm-9">@Model.Notes</dd>

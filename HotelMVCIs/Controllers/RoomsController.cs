@@ -3,6 +3,7 @@ using HotelMVCIs.Services;
 using HotelMVCIs.DTOs;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
@@ -17,12 +18,14 @@ namespace HotelMVCIs.Controllers
             _roomTypeService = roomTypeService;
         }
 
+        // GET: Rooms
         public async Task<IActionResult> Index()
         {
             var data = await _roomService.GetAllAsync();
             return View(data);
         }
 
+        // GET: Rooms/Create
         public async Task<IActionResult> Create()
         {
             var types = await _roomTypeService.GetAllAsync();
@@ -33,6 +36,7 @@ namespace HotelMVCIs.Controllers
             return View(model);
         }
 
+        // POST: Rooms/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RoomDTO dto)
@@ -48,6 +52,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // GET: Rooms/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -59,6 +64,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // POST: Rooms/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, RoomDTO dto)
@@ -86,6 +92,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // GET: Rooms/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -95,6 +102,7 @@ namespace HotelMVCIs.Controllers
             return View(roomToDelete);
         }
 
+        // POST: Rooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

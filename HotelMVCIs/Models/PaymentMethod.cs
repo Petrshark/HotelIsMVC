@@ -2,11 +2,11 @@
 {
     public enum PaymentMethod
     {
-        Hotovost, // Cash
-        Karta,    // Card
-        Prevod,   // Bank Transfer
-        Online,   // Online Payment (e.g., PayPal, Stripe)
-        Faktura,
-        Jine      // Other
+        Hotovost = 1,
+        Karta = 2,
+        Prevod = 3,
+        Online = 4,
+        Faktura = 5,
+        Jine = 6
     }
 }

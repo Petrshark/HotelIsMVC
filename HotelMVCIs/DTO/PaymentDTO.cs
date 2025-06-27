@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using HotelMVCIs.Models;
+using System.Collections.Generic;
+using System;
 
 namespace HotelMVCIs.DTOs
 {
@@ -12,23 +14,20 @@ namespace HotelMVCIs.DTOs
         [Display(Name = "Rezervace")]
         public int ReservationId { get; set; }
 
-        // --- NOVINKA: Vlastnosti pro zobrazení detailů rezervace a zbývající částky ---
-        // Tyto vlastnosti slouží k naplnění dat pro seznam (Index View) a nejsou určeny pro vstup uživatele
-        [Display(Name = "Rezervace")] // Zde můžeme mít obecnější DisplayName
-        public string? ReservationDisplay { get; set; } // Např. "#ID - Pokoj Číslo (Jméno Příjmení)"
+        [Display(Name = "Rezervace")]
+        public string? ReservationDisplay { get; set; }
 
         [Display(Name = "Celková cena rezervace")]
         public decimal ReservationTotalPrice { get; set; }
 
-        [Display(Name = "Již zaplaceno za rezervaci")]
+        [Display(Name = "Již zaplaceno")]
         public decimal ReservationTotalPaid { get; set; }
 
-        [Display(Name = "Zbývá doplatit za rezervaci")]
+        [Display(Name = "Zbývá doplatit")]
         public decimal ReservationRemainingBalance { get; set; }
-        // --------------------------------------------------------------------------------
 
         [Required(ErrorMessage = "Částka je povinná.")]
-        [Range(0.01, 1000000.00, ErrorMessage = "Částka musí být kladné číslo a maximálně 1 000 000.")]
+        [Range(0.01, 1000000.00)]
         [Display(Name = "Částka")]
         public decimal Amount { get; set; }
 
@@ -41,7 +40,7 @@ namespace HotelMVCIs.DTOs
         [Display(Name = "Metoda platby")]
         public PaymentMethod PaymentMethod { get; set; }
 
-        [StringLength(500, ErrorMessage = "Poznámky mohou mít maximálně 500 znaků.")]
+        [StringLength(500)]
         [Display(Name = "Poznámky")]
         public string? Notes { get; set; }
 

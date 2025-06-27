@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System;
 
-namespace HotelMVCIs.DTOs;
-
-
-    public class BookingChartDTO
+namespace HotelMVCIs.DTOs
 {
-    public DateTime CurrentMonth { get; set; }
-    public List<RoomRowDTO> RoomRows { get; set; } = new List<RoomRowDTO>();
+    public class BookingChartDTO
+    {
+        public DateTime CurrentMonth { get; set; }
+        public List<RoomRowDTO> RoomRows { get; set; } = new List<RoomRowDTO>();
+    }
 }

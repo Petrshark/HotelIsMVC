@@ -2,6 +2,7 @@
 using HotelMVCIs.Services;
 using HotelMVCIs.DTOs;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
@@ -14,17 +15,20 @@ namespace HotelMVCIs.Controllers
             _service = service;
         }
 
+        // GET: RoomTypes
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
             return View(data);
         }
 
+        // GET: RoomTypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        // POST: RoomTypes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RoomTypeDTO dto)
@@ -37,6 +41,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // GET: RoomTypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -45,6 +50,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // POST: RoomTypes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, RoomTypeDTO dto)
@@ -69,6 +75,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // GET: RoomTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -77,6 +84,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // POST: RoomTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

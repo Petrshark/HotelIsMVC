@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using HotelMVCIs.Models;
+using System.Collections.Generic;
+using System;
 
 namespace HotelMVCIs.DTOs
 {
@@ -11,18 +13,15 @@ namespace HotelMVCIs.DTOs
         [Required(ErrorMessage = "Musíte vybrat hosta.")]
         [Display(Name = "Host")]
         public int GuestId { get; set; }
-        // Tyto vlastnosti jsou POUZE PRO ZOBRAZENÍ v seznamu,
-        // nemají být Required ve formuláři Edit/Create
-        // A pokud nemají být editable, neměly by mít ani [Display(Name=...)]
-        // proto jsem je odstranil.
-        public string? GuestFullName { get; set; } // <--- ZMĚNA: ? pro nullable string
-        public string? RoomNumber { get; set; } // <--- ZMĚNA: ? pro nullable string
-        public string? RoomTypeName { get; set; } // <--- ZMĚNA: ? pro nullable string
 
+        public string? GuestFullName { get; set; }
 
         [Required(ErrorMessage = "Musíte vybrat pokoj.")]
         [Display(Name = "Pokoj")]
         public int RoomId { get; set; }
+
+        public string? RoomNumber { get; set; }
+        public string? RoomTypeName { get; set; }
 
         [Required(ErrorMessage = "Datum příjezdu je povinné.")]
         [DataType(DataType.Date)]
@@ -35,18 +34,17 @@ namespace HotelMVCIs.DTOs
         public DateTime CheckOutDate { get; set; } = DateTime.Today.AddDays(1);
 
         [Required(ErrorMessage = "Počet hostů je povinný.")]
-        [Range(1, 10, ErrorMessage = "Počet hostů musí být alespoň 1.")]
+        [Range(1, 10)]
         [Display(Name = "Počet hostů")]
         public int NumberOfGuests { get; set; }
 
-        // TotalPrice je vypočítaná, neměla by být Required ani Display pro formulář
+        [Display(Name = "Celková cena")]
         public decimal TotalPrice { get; set; }
 
         [Required(ErrorMessage = "Status je povinný.")]
         [Display(Name = "Status")]
         public ReservationStatus Status { get; set; }
 
-        // RemainingBalance je také vypočítaná pro zobrazení
         [Display(Name = "Zbývá doplatit")]
         public decimal RemainingBalance { get; set; }
 

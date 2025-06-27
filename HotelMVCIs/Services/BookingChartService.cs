@@ -1,7 +1,11 @@
 ﻿using HotelMVCIs.Data;
 using HotelMVCIs.DTOs;
-using Microsoft.EntityFrameworkCore;
 using HotelMVCIs.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Services
 {

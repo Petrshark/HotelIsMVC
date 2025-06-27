@@ -1,58 +1,148 @@
-﻿@model HotelMVCIs.DTOs.ReservationDTO
+﻿@model HotelMVCIs.ViewModels.ReservationEditViewModel
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Upravit rezervaci";
+    var culture = new CultureInfo("cs-CZ");
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>Upravit rezervaci č. @Model.Reservation.Id</h1>
 <hr />
+
 <div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-            <input type="hidden" asp-for="Id" />
+    <div class="col-md-7">
+        <h4>Základní údaje</h4>
+        <form asp-action="Edit" asp-route-id="@Model.Reservation.Id" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Reservation.Id" />
 
             <div class="form-group mb-3">
-                <label asp-for="GuestId" class="control-label"></label>
-                <select asp-for="GuestId" class="form-control" asp-items="@Model.GuestsList">
+                <label asp-for="Reservation.GuestId" class="control-label">Host</label>
+                <select asp-for="Reservation.GuestId" class="form-control" asp-items="@Model.Reservation.GuestsList">
                     <option value="">-- Vyberte hosta --</option>
                 </select>
             </div>
 
             <div class="form-group mb-3">
-                <label asp-for="RoomId" class="control-label"></label>
-                <select asp-for="RoomId" class="form-control" asp-items="@Model.RoomsList">
+                <label asp-for="Reservation.RoomId" class="control-label"></label>
+                <select asp-for="Reservation.RoomId" class="form-control" asp-items="@Model.Reservation.RoomsList">
                     <option value="">-- Vyberte pokoj --</option>
                 </select>
             </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="CheckInDate" class="control-label"></label>
-                <input asp-for="CheckInDate" class="form-control" />
-                <span asp-validation-for="CheckInDate" class="text-danger"></span>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label asp-for="Reservation.CheckInDate" class="control-label"></label>
+                        <input asp-for="Reservation.CheckInDate" class="form-control" type="date" />
+                        <span asp-validation-for="Reservation.CheckInDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <label asp-for="Reservation.CheckOutDate" class="control-label"></label>
+                        <input asp-for="Reservation.CheckOutDate" class="form-control" type="date" />
+                        <span asp-validation-for="Reservation.CheckOutDate" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-
             <div class="form-group mb-3">
-                <label asp-for="CheckOutDate" class="control-label"></label>
-                <input asp-for="CheckOutDate" class="form-control" />
-                <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                <label asp-for="Reservation.NumberOfGuests" class="control-label"></label>
+                <input asp-for="Reservation.NumberOfGuests" class="form-control" type="number" />
+                <span asp-validation-for="Reservation.NumberOfGuests" class="text-danger"></span>
             </div>
-
             <div class="form-group mb-3">
-                <label asp-for="NumberOfGuests" class="control-label"></label>
-                <input asp-for="NumberOfGuests" class="form-control" type="number" />
-                <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+                <label asp-for="Reservation.Status" class="control-label"></label>
+                <select asp-for="Reservation.Status" class="form-control" asp-items="Html.GetEnumSelectList<HotelMVCIs.Models.ReservationStatus>()"></select>
+                <span asp-validation-for="Reservation.Status" class="text-danger"></span>
             </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<HotelMVCIs.Models.ReservationStatus>()"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-
             <div class="form-group">
-                <input type="submit" value="Uložit změny" class="btn btn-success" />
+                <input type="submit" value="Uložit změny rezervace" class="btn btn-success" />
                 <a asp-action="Index" class="btn btn-secondary">Zpět na seznam</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <h4>Finanční souhrn</h4>
+        <dl class="row p-3 bg-light rounded">
+            <dt class="col-sm-6">@Html.DisplayNameFor(m => m.AccommodationPrice)</dt>
+            <dd class="col-sm-6 text-end">@Model.AccommodationPrice.ToString("C", culture)</dd>
+            <dt class="col-sm-6">@Html.DisplayNameFor(m => m.ServicesPrice)</dt>
+            <dd class="col-sm-6 text-end">@Model.ServicesPrice.ToString("C", culture)</dd>
+            <dt class="col-sm-6 border-top pt-2 mt-2">@Html.DisplayNameFor(m => m.GrandTotal)</dt>
+            <dd class="col-sm-6 text-end border-top pt-2 mt-2 fw-bold">@Model.GrandTotal.ToString("C", culture)</dd>
+            <dt class="col-sm-6 text-success">@Html.DisplayNameFor(m => m.TotalPaid)</dt>
+            <dd class="col-sm-6 text-end text-success">@Model.TotalPaid.ToString("C", culture)</dd>
+            <dt class="col-sm-6 border-top pt-2 mt-2 text-danger">@Html.DisplayNameFor(m => m.RemainingBalance)</dt>
+            <dd class="col-sm-6 text-end border-top pt-2 mt-2 fw-bold text-danger">@Model.RemainingBalance.ToString("C", culture)</dd>
+        </dl>
+        <div class="d-grid gap-2 mt-3">
+             <a asp-controller="Payments" asp-action="Create" asp-route-reservationId="@Model.Reservation.Id" class="btn btn-lg btn-success">Přidat platbu</a>
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<h2>Služby k rezervaci</h2>
+<div class="row">
+    <div class="col-md-7">
+        <h4>Přidané služby</h4>
+        @if (Model.AddedServices.Any())
+        {
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Služba</th>
+                            <th>Počet</th>
+                            <th class="text-end">Cena/ks</th>
+                            <th class="text-end">Cena celkem</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.AddedServices)
+                    {
+                                <tr>
+                                    <td>@item.HotelService.Name</td>
+                                    <td>@item.Quantity</td>
+                                    <td class="text-end">@item.PricePerItem.ToString("C", culture)</td>
+                                    <td class="text-end">@((item.Quantity * item.PricePerItem).ToString("C", culture))</td>
+                                    <td class="text-center">
+                                        <form asp-action="RemoveServiceFromReservation" method="post" class="d-inline">
+                                            <input type="hidden" name="reservationId" value="@item.ReservationId" />
+                                            <input type="hidden" name="hotelServiceId" value="@item.HotelServiceId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Odebrat službu">&times;</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                    }
+                    </tbody>
+                </table>
+        }
+        else
+        {
+                <p class="text-muted">K této rezervaci nebyly přidány žádné služby.</p>
+        }
+    </div>
+    <div class="col-md-5">
+        <h4>Přidat novou službu</h4>
+        <form asp-action="AddServiceToReservation" method="post" class="mt-2">
+            <input type="hidden" name="reservationId" value="@Model.Reservation.Id" />
+            <div class="row g-2 align-items-center">
+                <div class="col-sm-7">
+                    <label class="visually-hidden" asp-for="ServiceToAddId">Služba</label>
+                    <select asp-for="ServiceToAddId" class="form-select" asp-items="@Model.AvailableServices">
+                        <option value="">-- Vyberte službu --</option>
+                    </select>
+                </div>
+                 <div class="col-sm-2">
+                    <label class="visually-hidden" asp-for="ServiceToAddQuantity">Počet</label>
+                    <input asp-for="ServiceToAddQuantity" class="form-control" type="number" min="1" />
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary w-100">Přidat</button>
+                </div>
             </div>
         </form>
     </div>

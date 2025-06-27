@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelMVCIs.Services;
 using HotelMVCIs.DTOs;
-using Microsoft.EntityFrameworkCore; // Pro DbUpdateConcurrencyException
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
@@ -72,7 +73,7 @@ namespace HotelMVCIs.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var dto = await _service.GetByIdAsync(id.Value); // Pro zobrazení detailů před smazáním
+            var dto = await _service.GetByIdAsync(id.Value);
             if (dto == null) return NotFound();
             return View(dto);
         }

@@ -1,4 +1,5 @@
 using HotelMVCIs.Data;
+using HotelMVCIs.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelMVCIs
@@ -11,16 +12,17 @@ namespace HotelMVCIs
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<Services.RoomTypeService>();
-            builder.Services.AddScoped<Services.RoomService>();
-            builder.Services.AddScoped<Services.GuestService>();
-            builder.Services.AddScoped<Services.ReservationService>();
-            builder.Services.AddScoped<Services.BookingChartService>();
-            builder.Services.AddScoped<Services.PaymentService>();
-            builder.Services.AddScoped<Services.HotelServiceService>();
 
             builder.Services.AddDbContext<HotelMVCIsDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("HotelIsDbConnection")));
+
+            builder.Services.AddScoped<RoomTypeService>();
+            builder.Services.AddScoped<RoomService>();
+            builder.Services.AddScoped<GuestService>();
+            builder.Services.AddScoped<PaymentService>();
+            builder.Services.AddScoped<ReservationService>();
+            builder.Services.AddScoped<BookingChartService>();
+            builder.Services.AddScoped<HotelServiceService>();
 
             var app = builder.Build();
 

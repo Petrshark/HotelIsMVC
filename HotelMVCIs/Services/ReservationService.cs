@@ -2,7 +2,10 @@
 using HotelMVCIs.DTOs;
 using HotelMVCIs.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelMVCIs.Services
 {
@@ -15,6 +18,46 @@ namespace HotelMVCIs.Services
         {
             _context = context;
             _paymentService = paymentService;
+        }
+
+        public async Task<IEnumerable<ReservationDTO>> GetAllAsync()
+        {
+            var reservations = await _context.Reservations
+                .Include(r => r.Guest)
+                .Include(r => r.Room).ThenInclude(room => room.RoomType)
+                .Include(r => r.ReservationItems)
+                .OrderByDescending(r => r.CheckInDate)
+                .ToListAsync();
+
+            var reservationIds = reservations.Select(r => r.Id).ToList();
+
+            var payments = await _context.Payments
+                .Where(p => reservationIds.Contains(p.ReservationId))
+                .GroupBy(p => p.ReservationId)
+                .Select(g => new { ReservationId = g.Key, TotalPaid = g.Sum(p => p.Amount) })
+                .ToDictionaryAsync(x => x.ReservationId, x => x.TotalPaid);
+
+            var reservationDTOs = reservations.Select(reservation =>
+            {
+                var servicesPrice = reservation.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = reservation.TotalPrice + servicesPrice;
+                payments.TryGetValue(reservation.Id, out var totalPaid);
+
+                return new ReservationDTO
+                {
+                    Id = reservation.Id,
+                    GuestFullName = $"{reservation.Guest.FirstName} {reservation.Guest.LastName}",
+                    RoomNumber = reservation.Room.RoomNumber,
+                    RoomTypeName = reservation.Room.RoomType.Name,
+                    CheckInDate = reservation.CheckInDate,
+                    CheckOutDate = reservation.CheckOutDate,
+                    TotalPrice = grandTotal,
+                    Status = reservation.Status,
+                    RemainingBalance = grandTotal - totalPaid
+                };
+            }).ToList();
+
+            return reservationDTOs;
         }
 
         public async Task<bool> IsRoomAvailableAsync(int roomId, DateTime checkIn, DateTime checkOut, int? reservationIdToExclude = null)
@@ -32,55 +75,11 @@ namespace HotelMVCIs.Services
             return !await query.AnyAsync();
         }
 
-        // ZMĚNA: GetAllAsync bude nyní vracet IEnumerable<ReservationDTO> a naplní nové vlastnosti
-        public async Task<IEnumerable<ReservationDTO>> GetAllAsync() // <--- ZMĚNA NÁVRATOVÉHO TYPU
-        {
-            // Načteme všechny rezervace s hosty a pokoji
-            var reservations = await _context.Reservations
-                .Include(r => r.Guest)
-                .Include(r => r.Room)
-                    .ThenInclude(room => room.RoomType)
-                .OrderByDescending(r => r.CheckInDate)
-                .ToListAsync();
-
-            var reservationDTOs = new List<ReservationDTO>();
-
-            foreach (var reservation in reservations)
-            {
-                // Pro každou rezervaci zjistíme celkovou zaplacenou částku
-                var totalPaid = await _paymentService.GetTotalPaidForReservationAsync(reservation.Id);
-                var remaining = reservation.TotalPrice - totalPaid;
-
-                reservationDTOs.Add(new ReservationDTO
-                {
-                    Id = reservation.Id,
-                    GuestId = reservation.GuestId, // Ponecháme ID
-                    RoomId = reservation.RoomId,   // Ponecháme ID
-
-                    // Nové vlastnosti pro zobrazení
-                    GuestFullName = $"{reservation.Guest.FirstName} {reservation.Guest.LastName}",
-                    RoomNumber = reservation.Room.RoomNumber,
-                    RoomTypeName = reservation.Room.RoomType.Name,
-
-                    CheckInDate = reservation.CheckInDate,
-                    CheckOutDate = reservation.CheckOutDate,
-                    NumberOfGuests = reservation.NumberOfGuests,
-                    TotalPrice = reservation.TotalPrice, // Nyní mapujeme TotalPrice
-                    Status = reservation.Status,
-                    RemainingBalance = remaining // <-- Vypočítaná hodnota
-                });
-            }
-
-            return reservationDTOs;
-        }
-
-        public async Task<ReservationDTO> GetByIdForEditAsync(int id)
+        public async Task<ReservationDTO?> GetByIdForEditAsync(int id)
         {
             var reservation = await _context.Reservations.FindAsync(id);
             if (reservation == null) return null;
 
-            // Zde nenačítáme RemainingBalance ani FullName, protože to není pro Edit formulář potřeba.
-            // Pokud byste to v Edit formuláři potřebovali, museli bychom to zde také načíst/vypočítat.
             return new ReservationDTO
             {
                 Id = reservation.Id,
@@ -89,25 +88,22 @@ namespace HotelMVCIs.Services
                 CheckInDate = reservation.CheckInDate,
                 CheckOutDate = reservation.CheckOutDate,
                 NumberOfGuests = reservation.NumberOfGuests,
-                // TotalPrice a Status jsou již v původním modelu Reservation
-                // RemainingBalance není pro editaci potřeba, je to jen pro zobrazení
                 Status = reservation.Status
             };
         }
 
-        public async Task<Reservation> GetByIdForDeleteAsync(int id)
+        public async Task<Reservation?> GetByIdForDeleteAsync(int id)
         {
             return await _context.Reservations
                .Include(r => r.Guest)
-               .Include(r => r.Room)
-                   .ThenInclude(room => room.RoomType)
+               .Include(r => r.Room).ThenInclude(room => room.RoomType)
                .FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public async Task CreateAsync(ReservationDTO dto)
+        public async Task<int> CreateAsync(ReservationDTO dto)
         {
             var room = await _context.Rooms.FindAsync(dto.RoomId);
-            if (room == null) return;
+            if (room == null) return 0;
 
             var nights = (dto.CheckOutDate - dto.CheckInDate).Days;
             if (nights <= 0) nights = 1;
@@ -127,6 +123,7 @@ namespace HotelMVCIs.Services
 
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
+            return reservation.Id;
         }
 
         public async Task UpdateAsync(ReservationDTO dto)
@@ -138,15 +135,15 @@ namespace HotelMVCIs.Services
             var nights = (dto.CheckOutDate - dto.CheckInDate).Days;
             if (nights <= 0) nights = 1;
 
-            var totalPrice = nights * room.PricePerNight;
+            var roomPrice = nights * room.PricePerNight;
 
             reservation.GuestId = dto.GuestId;
             reservation.RoomId = dto.RoomId;
             reservation.CheckInDate = dto.CheckInDate;
             reservation.CheckOutDate = dto.CheckOutDate;
             reservation.NumberOfGuests = dto.NumberOfGuests;
-            reservation.TotalPrice = totalPrice; // Aktualizujeme TotalPrice
             reservation.Status = dto.Status;
+            reservation.TotalPrice = roomPrice; // Ukládáme VŽDY jen cenu za ubytování
 
             _context.Update(reservation);
             await _context.SaveChangesAsync();
@@ -162,14 +159,9 @@ namespace HotelMVCIs.Services
             }
         }
 
-        public async Task<DateTime?> GetEarliestReservationDateAsync()
+        public async Task<bool> ExistsAsync(int id)
         {
-            var earliestReservation = await _context.Reservations
-                .Where(r => r.Status != ReservationStatus.Cancelled)
-                .OrderBy(r => r.CheckInDate)
-                .FirstOrDefaultAsync();
-
-            return earliestReservation?.CheckInDate;
+            return await _context.Reservations.AnyAsync(e => e.Id == id);
         }
     }
 }

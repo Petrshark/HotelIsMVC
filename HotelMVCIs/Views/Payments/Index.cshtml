@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HotelMVCIs.DTOs.PaymentDTO> 
+﻿@model IEnumerable<HotelMVCIs.DTOs.PaymentDTO>
 @using System.Globalization
 
 @{
@@ -10,38 +10,35 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Přidat novou platbu</a>
 </p>
-
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.ReservationDisplay)</th> @* <--- ZMĚNA DISPLAYNAME *@
-            <th>@Html.DisplayNameFor(model => model.PaymentDate)</th>
-            <th>@Html.DisplayNameFor(model => model.Amount)</th>
-            <th>@Html.DisplayNameFor(model => model.PaymentMethod)</th>
-            <th>@Html.DisplayNameFor(model => model.ReservationRemainingBalance)</th> @* <--- NOVÝ HLAVIČKOVÝ SLOUPEC *@
-            <th>@Html.DisplayNameFor(model => model.Notes)</th>
+            <th>@Html.DisplayNameFor(model => model.First().ReservationDisplay)</th>
+            <th>@Html.DisplayNameFor(model => model.First().PaymentDate)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Amount)</th>
+            <th>@Html.DisplayNameFor(model => model.First().PaymentMethod)</th>
+            <th>@Html.DisplayNameFor(model => model.First().ReservationRemainingBalance)</th>
             <th>Akce</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@item.ReservationId" title="Upravit rezervaci">
-                        @item.ReservationDisplay @* <--- ZOBRAZENÍ NOVÉ VLASTNOSTI *@
-                    </a>
-                </td>
-                <td>@item.PaymentDate.ToShortDateString()</td>
-                <td>@item.Amount.ToString("C", new CultureInfo("cs-CZ"))</td>
-                <td>@Html.DisplayFor(modelItem => item.PaymentMethod)</td>
-                <td>@item.ReservationRemainingBalance.ToString("C", new CultureInfo("cs-CZ"))</td> @* <--- ZOBRAZENÍ ZBÝVAJÍCÍ ČÁSTKY *@
-                <td>@item.Notes</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Upravit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Smazat</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@item.ReservationId" title="Přejít na detail rezervace">
+                        @item.ReservationDisplay
+                        </a>
+                    </td>
+                    <td>@item.PaymentDate.ToShortDateString()</td>
+                    <td>@item.Amount.ToString("C", new CultureInfo("cs-CZ"))</td>
+                    <td>@Html.DisplayFor(modelItem => item.PaymentMethod)</td>
+                    <td>@item.ReservationRemainingBalance.ToString("C", new CultureInfo("cs-CZ"))</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Upravit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Smazat</a>
+                    </td>
+                </tr>
         }
     </tbody>
 </table>

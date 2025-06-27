@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelMVCIs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2f0cf73e5bdd0e04260000d1136374e4947635a")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelMVCIs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelMVCIs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

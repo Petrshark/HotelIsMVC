@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelMVCIs.Services;
 using HotelMVCIs.DTOs;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using HotelMVCIs.Data; // <-- Důležitý using pro DbContext
 
 namespace HotelMVCIs.Controllers
 {
@@ -10,20 +11,25 @@ namespace HotelMVCIs.Controllers
     {
         private readonly PaymentService _paymentService;
         private readonly ReservationService _reservationService;
+        private readonly HotelMVCIsDbContext _context; // <-- PŘIDANÁ PROMĚNNÁ PRO DB KONTEXT
 
-        public PaymentsController(PaymentService paymentService, ReservationService reservationService)
+        public PaymentsController(
+            PaymentService paymentService,
+            ReservationService reservationService,
+            HotelMVCIsDbContext context) // <-- PŘIDANÁ ZÁVISLOST V KONSTRUKTORU
         {
             _paymentService = paymentService;
             _reservationService = reservationService;
+            _context = context; // <-- PŘIŘAZENÍ KONTEXTU
         }
 
-        // ZMĚNA: Akce Index nyní pracuje s IEnumerable<PaymentDTO>
         public async Task<IActionResult> Index()
         {
-            var data = await _paymentService.GetAllAsync(); // Tato metoda nyní vrací IEnumerable<PaymentDTO>
+            var data = await _paymentService.GetAllAsync();
             return View(data);
         }
-        public async Task<IActionResult> Create(int? reservationId) // Volitelný parametr pro předvyplnění rezervace
+
+        public async Task<IActionResult> Create(int? reservationId)
         {
             var dto = new PaymentDTO();
             await PopulateDropdowns(dto);
@@ -31,26 +37,18 @@ namespace HotelMVCIs.Controllers
             if (reservationId.HasValue)
             {
                 dto.ReservationId = reservationId.Value;
-
-                // --- ZMĚNA ZDE: Načteme rezervaci, abychom znali její celkovou cenu ---
                 var reservation = await _reservationService.GetByIdForDeleteAsync(reservationId.Value);
                 if (reservation != null)
                 {
+                    var servicesPrice = await _context.ReservationItems
+                        .Where(ri => ri.ReservationId == reservationId.Value)
+                        .SumAsync(ri => ri.Quantity * ri.PricePerItem);
+                    var grandTotal = reservation.TotalPrice + servicesPrice;
                     var totalPaid = await _paymentService.GetTotalPaidForReservationAsync(reservationId.Value);
-                    var remainingBalance = reservation.TotalPrice - totalPaid;
-
-                    if (remainingBalance > 0)
-                    {
-                        dto.Amount = remainingBalance;
-                    }
-                    else // Pokud už je zaplaceno vše nebo přeplaceno, můžete nastavit na 0 nebo na celkovou cenu jako návrh.
-                    {
-                        dto.Amount = 0; // Nebo reservation.TotalPrice;
-                    }
+                    var remainingBalance = grandTotal - totalPaid;
+                    dto.Amount = remainingBalance > 0 ? remainingBalance : 0;
                 }
-                // ------------------------------------------------------------------
             }
-
             return View(dto);
         }
 
@@ -58,7 +56,6 @@ namespace HotelMVCIs.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PaymentDTO dto)
         {
-            // Vlastní validace pro kontrolu, zda platba nepřekračuje celkovou cenu rezervace
             var reservation = await _reservationService.GetByIdForDeleteAsync(dto.ReservationId);
             if (reservation == null)
             {
@@ -66,12 +63,15 @@ namespace HotelMVCIs.Controllers
             }
             else
             {
+                var servicesPrice = await _context.ReservationItems
+                    .Where(ri => ri.ReservationId == dto.ReservationId)
+                    .SumAsync(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = reservation.TotalPrice + servicesPrice;
                 var totalPaid = await _paymentService.GetTotalPaidForReservationAsync(dto.ReservationId);
-                // Kontrola by měla být proti celkové ceně rezervace, ne proti zbývajícímu dluhu + nové částce
-                // Pro Create chceme ověřit, že nová platba + dosud zaplacené nepřekročí TotalPrice
-                if (totalPaid + dto.Amount > reservation.TotalPrice + 0.01M) // Malá tolerance pro desetinná čísla
+
+                if (totalPaid + dto.Amount > grandTotal + 0.01M)
                 {
-                    ModelState.AddModelError("Amount", $"Zaplacená částka ({totalPaid + dto.Amount:C}) by překročila celkovou cenu rezervace ({reservation.TotalPrice:C}). Zbývá zaplatit {reservation.TotalPrice - totalPaid:C}.");
+                    ModelState.AddModelError("Amount", $"Zaplacená částka ({totalPaid + dto.Amount:C}) by překročila celkovou cenu rezervace ({grandTotal:C}).");
                 }
             }
 
@@ -101,7 +101,6 @@ namespace HotelMVCIs.Controllers
         {
             if (id != dto.Id) return NotFound();
 
-            // Vlastní validace pro kontrolu, zda platba nepřekračuje celkovou cenu rezervace
             var reservation = await _reservationService.GetByIdForDeleteAsync(dto.ReservationId);
             if (reservation == null)
             {
@@ -109,15 +108,15 @@ namespace HotelMVCIs.Controllers
             }
             else
             {
-                // Musíme odečíst stávající částku této platby před kontrolou
                 var currentPayment = await _paymentService.GetByIdAsync(id);
                 decimal amountBeforeEdit = currentPayment?.Amount ?? 0;
-
                 var totalPaidExcludingCurrent = await _paymentService.GetTotalPaidForReservationAsync(dto.ReservationId) - amountBeforeEdit;
+                var servicesPrice = await _context.ReservationItems.Where(ri => ri.ReservationId == dto.ReservationId).SumAsync(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = reservation.TotalPrice + servicesPrice;
 
-                if (totalPaidExcludingCurrent + dto.Amount > reservation.TotalPrice + 0.01M)
+                if (totalPaidExcludingCurrent + dto.Amount > grandTotal + 0.01M)
                 {
-                    ModelState.AddModelError("Amount", $"Upravená částka ({totalPaidExcludingCurrent + dto.Amount:C}) by překročila celkovou cenu rezervace ({reservation.TotalPrice:C}). Zbývá zaplatit {reservation.TotalPrice - totalPaidExcludingCurrent:C}.");
+                    ModelState.AddModelError("Amount", $"Upravená částka ({totalPaidExcludingCurrent + dto.Amount:C}) by překročila celkovou cenu rezervace ({grandTotal:C}).");
                 }
             }
 
@@ -144,12 +143,10 @@ namespace HotelMVCIs.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var payment = await _paymentService.GetByIdAsync(id.Value); // Changed to use GetByIdAsync
-
+            var payment = await _paymentService.GetPaymentForDeleteAsync(id.Value);
             if (payment == null) return NotFound();
             return View(payment);
         }
-
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -159,7 +156,9 @@ namespace HotelMVCIs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Pomocná metoda pro naplnění rozevíracích seznamů
+        // =================================================================
+        // TATO METODA CHYBĚLA
+        // =================================================================
         private async Task PopulateDropdowns(PaymentDTO dto)
         {
             dto.ReservationsList = await _paymentService.GetReservationsForDropdownAsync();
