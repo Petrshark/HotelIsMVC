@@ -84,10 +84,5 @@ namespace HotelMVCIs.Services
                 await _context.SaveChangesAsync();
             }
         }
-
-        public async Task<bool> ExistsAsync(int id)
-        {
-            return await _context.HotelServices.AnyAsync(e => e.Id == id);
-        }
     }
 }

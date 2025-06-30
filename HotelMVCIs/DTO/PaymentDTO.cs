@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using HotelMVCIs.Models;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using System.ComponentModel.DataAnnotations;
+using HotelMVCIs.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HotelMVCIs.DTOs
 {
@@ -26,8 +26,9 @@ namespace HotelMVCIs.DTOs
         [Display(Name = "Zbývá doplatit")]
         public decimal ReservationRemainingBalance { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Částka je povinná.")]
-        [Range(0.01, 1000000.00)]
+        [Range(0.01, 1000000.00, ErrorMessage = "Částka musí být kladné číslo a maximálně 1 000 000.")]
         [Display(Name = "Částka")]
         public decimal Amount { get; set; }
 

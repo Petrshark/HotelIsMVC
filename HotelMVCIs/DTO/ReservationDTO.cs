@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using HotelMVCIs.Models;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using System.ComponentModel.DataAnnotations;
+using HotelMVCIs.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HotelMVCIs.DTOs
 {

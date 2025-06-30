@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using HotelMVCIs.DTOs;
+using HotelMVCIs.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RoomTypesController : Controller
     {
         private readonly RoomTypeService _service;
@@ -15,20 +17,16 @@ namespace HotelMVCIs.Controllers
             _service = service;
         }
 
-        // GET: RoomTypes
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAllAsync();
-            return View(data);
+            return View(await _service.GetAllAsync());
         }
 
-        // GET: RoomTypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: RoomTypes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RoomTypeDTO dto)
@@ -41,7 +39,6 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
-        // GET: RoomTypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -50,32 +47,19 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
-        // POST: RoomTypes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, RoomTypeDTO dto)
         {
             if (id != dto.Id) return NotFound();
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    await _service.UpdateAsync(dto);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await _service.ExistsAsync(dto.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
+                await _service.UpdateAsync(dto);
                 return RedirectToAction(nameof(Index));
             }
             return View(dto);
         }
 
-        // GET: RoomTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -84,7 +68,6 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
-        // POST: RoomTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

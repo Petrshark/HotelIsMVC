@@ -1,6 +1,125 @@
 ﻿@{
-    ViewData["Title"] = "Ochrana osobních údajů";
+    ViewData["Title"] = "Popis hotelového systámu"; 
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Zde můžete uvést informace o ochraně osobních údajů vašeho webu.</p>
+
+<h2>Přihlašovací údaje (pro demonstraci)</h2>
+<p>Pro přístup do systému můžete použít následující účty:</p>
+<ul>
+    <li><strong>Administrátor:</strong>
+        <ul>
+            <li>E-mail: admin@admin.cz</li>
+            <li>Heslo: Abcd1234.</li>
+            <li>Role: Admin</li>
+        </ul>
+    </li>
+    <li><strong>Recepční:</strong>
+        <ul>
+            <li>E-mail: recepce@recepce.cz</li>
+            <li>Heslo: Abcd1234.</li>
+            <li>Role: Recepční</li>
+        </ul>
+    </li>
+    <li><strong>Účetní:</strong>
+        <ul>
+            <li>E-mail: ucetni@ucetni.cz</li>
+            <li>Heslo: Abcd1234.</li>
+            <li>Role: Účetní</li>
+        </ul>
+    </li>
+</ul>
+<hr />
+
+<h2>Popis aplikace "HotelMVCIs"</h2>
+
+<p>Aplikace "HotelMVCIs" je **webový informační systém pro správu hotelových operací**, postavený na platformě **ASP.NET Core MVC** s použitím **Entity Framework Core** pro přístup k databázi a **ASP.NET Core Identity** pro správu uživatelů a rolí. Systém je navržen tak, aby poskytoval přehledný a efektivní nástroj pro recepční a administrátory hotelu.</p>
+
+<h3>Architektura:</h3>
+<p>Aplikace striktně dodržuje architekturu **Model-View-Controller (MVC)** a je dále rozdělena do vrstev pro lepší organizaci, modularitu a testovatelnost:</p>
+<ul>
+    <li><strong>Controllers:</strong> Obsluhují HTTP požadavky, koordinují obchodní logiku a vybírají pohledy.</li>
+    <li><strong>DTOs (Data Transfer Objects):</strong> Objekty pro přenos dat mezi vrstvami aplikace, často optimalizované pro konkrétní operace nebo zobrazení.</li>
+    <li><strong>Models:</strong> Reprezentují doménové entity aplikace a mapují se na databázové tabulky (Entity Framework Core).</li>
+    <li><strong>Services:</strong> Zapouzdřují obchodní logiku, validace a databázové operace, oddělují je od kontrolerů.</li>
+    <li><strong>ViewModels:</strong> Agregují data z různých zdrojů a připravují je pro zobrazení v pohledech, často včetně validací pro formuláře.</li>
+    <li><strong>Views:</strong> Jsou zodpovědné za prezentaci uživatelského rozhraní (HTML s Razor syntaxí).</li>
+</ul>
+
+<h3>Hlavní funkcionality a moduly:</h3>
+
+<h4>1. Autentizace a autorizace uživatelů (Modul Account a Users / Roles):</h4>
+<ul>
+    <li><strong>Přihlášení/Odhlášení:</strong> Standardní funkce pro přihlášení a odhlášení uživatelů do systému (pomocí e-mailu a hesla).</li>
+    <li><strong>Správa uživatelů (Users):</strong> Administrátoři mohou vytvářet, upravovat (včetně změny hesla) a mazat uživatelské účty. Zahrnuje ochranu proti smazání vlastního účtu.</li>
+    <li><strong>Správa rolí (Roles):</strong> Administrátoři mohou definovat uživatelské role (např. Admin, Recepční, Účetní) a přidělovat/odebírat uživatele k těmto rolím. Existuje ochrana proti smazání role, pokud je stále přiřazena uživatelům.</li>
+    <li><strong>Odepřený přístup:</strong> Speciální stránka pro uživatele, kteří se pokusí přistoupit k funkcionalitě, ke které nemají oprávnění.</li>
+</ul>
+
+<h4>2. Rezervační systém (Modul Reservations a BookingChart):</h4>
+<ul>
+    <li><strong>Rezervační štafle / Kalendář obsazenosti (BookingChart):</strong>
+        <ul>
+            <li>Interaktivní vizuální přehled obsazenosti pokojů v čase (měsíční zobrazení).</li>
+            <li>Zobrazuje rezervace jako barevné "pruhy", odlišené podle statusu (potvrzeno, check-in, check-out, zrušeno, opce).</li>
+            <li>Podporuje navigaci mezi měsíci.</li>
+            <li>Umožňuje vytvořit novou rezervaci přímým kliknutím na volný den v grafu pro konkrétní pokoj.</li>
+            <li>Při najetí myší na rezervaci zobrazuje detailní informace (host, data, počet hostů, celková cena, zaplaceno, zbývá).</li>
+        </ul>
+    </li>
+    <li><strong>Správa rezervací (Reservations):</strong>
+        <ul>
+            <li><strong>CRUD operace:</strong> Vytváření, úpravy a mazání rezervací.</li>
+            <li><strong>Komplexní formulář pro vytvoření/úpravu:</strong> Zahrnuje výběr hosta a pokoje (s dynamicky naplňovanými rozbalovacími seznamy), data příjezdu/odjezdu, počet hostů a status.</li>
+            <li><strong>Validace při vytváření/úpravě:</strong> Kontroluje kapacitu pokoje (počet hostů), validuje data příjezdu/odjezdu a co je klíčové, <strong>ověřuje dostupnost pokoje</strong> pro zadaný termín, aby se zabránilo dvojitým rezervacím.</li>
+            <li><strong>Přidávání/Odebírání hotelových služeb:</strong> Na detailu rezervace lze k rezervaci přidávat dodatečné hotelové služby (např. snídaně, wellness) a sledovat jejich množství a cenu.</li>
+            <li><strong>Finanční souhrn:</strong> Na detailu rezervace je zobrazen kompletní finanční souhrn – cena za ubytování, cena za služby, celková částka, již zaplaceno a zbývající dlužná částka.</li>
+            <li><strong>Přímé přidání platby:</strong> Z detailu rezervace je možné přímo přejít na formulář pro přidání platby pro danou rezervaci.</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>3. Správa hostů (Guests):</h4>
+<ul>
+    <li><strong>CRUD operace:</strong> Přehledné tabulkové zobrazení všech hostů s možností vytváření, úprav a mazání.</li>
+    <li><strong>Formuláře:</strong> Jednoduché formuláře pro zadání a úpravu kontaktních údajů hostů (jméno, e-mail, telefon, adresa, město, PSČ, národnost).</li>
+    <li><strong>AJAX přidávání:</strong> Možnost rychlého přidání nového hosta z modálního okna bez nutnosti opustit aktuální stránku (např. při vytváření rezervace). Zahrnuje kontrolu duplicity e-mailu.</li>
+</ul>
+
+<h4>4. Správa hotelových služeb (HotelServices):</h4>
+<ul>
+    <li><strong>CRUD operace:</strong> Správa seznamu služeb, které hotel nabízí (např. název, cena, popis, aktivní/neaktivní status).</li>
+    <li><strong>Formuláře:</strong> Formuláře pro vytváření a úpravu služeb.</li>
+</ul>
+
+<h4>5. Správa plateb (Payments):</h4>
+<ul>
+    <li><strong>CRUD operace:</strong> Správa jednotlivých platebních záznamů.</li>
+    <li><strong>Formuláře:</strong> Formuláře pro vytváření a úpravu plateb, které zahrnují výběr související rezervace, částku, datum platby, metodu platby a poznámky.</li>
+    <li><strong>Finanční validace:</strong> Při přidávání platby systém kontroluje, zda zadaná částka nepřekročí celkovou dlužnou částku rezervace (ubytování + služby).</li>
+    <li><strong>Propojení s rezervacemi:</strong> Snadný přístup k detailu související rezervace přímo ze seznamu plateb.</li>
+</ul>
+
+<h4>6. Reporty (Reports):</h4>
+<ul>
+    <li><strong>Platební report (PaymentReport):</strong>
+        <ul>
+            <li>Umožňuje generovat report plateb za specifikované časové období.</li>
+            <li>Agreguje platby podle data a metody platby.</li>
+            <li>Zobrazuje celkový součet plateb za vybrané období.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Technologická specifika:</h3>
+<ul>
+    <li><strong>ASP.NET Core Identity:</strong> Robustní systém pro správu uživatelů, rolí a zabezpečení.</li>
+    <li><strong>Entity Framework Core:</strong> ORM (Object-Relational Mapper) pro snadnou interakci s databází pomocí objektů C#. Využívá Include pro eager loading dat a LINQ dotazy pro efektivní práci s daty.</li>
+    <li><strong>DTOs a ViewModels:</strong> Oddělení datových struktur pro efektivní přenos dat a pro přípravu dat pro pohledy, což zlepšuje architekturu a testovatelnost.</li>
+    <li><strong>Bootstrap 5:</strong> Využívá se pro responzivní design a moderní vizuální styl prvků UI (tlačítka, formuláře, tabulky, karty, navigace). Obsahuje globální CSS proměnné pro snadné přizpůsobení barev a zaoblení.</li>
+    <li><strong>Responzivní design:</strong> Díky Bootstrapu a specifickým CSS úpravám (table-responsive, media queries) je aplikace navržena tak, aby se přizpůsobila různým velikostem obrazovek (desktopy, tablety, mobily), zejména složitý rezervační graf.</li>
+    <li><strong>Client-side validace:</strong> Díky DataAnnotations v DTO/ViewModels a zahrnutím _ValidationScriptsPartial je formulářová validace prováděna na straně klienta pro okamžitou zpětnou vazbu uživateli.</li>
+    <li><strong>AJAX:</strong> Použito pro plynulé operace (např. přidání hosta z modálního okna) bez nutnosti obnovovat celou stránku.</li>
+</ul>
+
+<p>Celkově je "HotelMVCIs" komplexní a moderní webová aplikace, která efektivně využívá standardní frameworky a osvědčené postupy pro správu klíčových procesů v hotelovém prostředí, s důrazem na uživatelskou přívětivost a zabezpečení.</p>

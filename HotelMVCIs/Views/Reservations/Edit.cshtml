@@ -22,7 +22,6 @@
                     <option value="">-- Vyberte hosta --</option>
                 </select>
             </div>
-
             <div class="form-group mb-3">
                 <label asp-for="Reservation.RoomId" class="control-label"></label>
                 <select asp-for="Reservation.RoomId" class="form-control" asp-items="@Model.Reservation.RoomsList">
@@ -67,12 +66,16 @@
         <dl class="row p-3 bg-light rounded">
             <dt class="col-sm-6">@Html.DisplayNameFor(m => m.AccommodationPrice)</dt>
             <dd class="col-sm-6 text-end">@Model.AccommodationPrice.ToString("C", culture)</dd>
+
             <dt class="col-sm-6">@Html.DisplayNameFor(m => m.ServicesPrice)</dt>
             <dd class="col-sm-6 text-end">@Model.ServicesPrice.ToString("C", culture)</dd>
+
             <dt class="col-sm-6 border-top pt-2 mt-2">@Html.DisplayNameFor(m => m.GrandTotal)</dt>
             <dd class="col-sm-6 text-end border-top pt-2 mt-2 fw-bold">@Model.GrandTotal.ToString("C", culture)</dd>
+
             <dt class="col-sm-6 text-success">@Html.DisplayNameFor(m => m.TotalPaid)</dt>
             <dd class="col-sm-6 text-end text-success">@Model.TotalPaid.ToString("C", culture)</dd>
+
             <dt class="col-sm-6 border-top pt-2 mt-2 text-danger">@Html.DisplayNameFor(m => m.RemainingBalance)</dt>
             <dd class="col-sm-6 text-end border-top pt-2 mt-2 fw-bold text-danger">@Model.RemainingBalance.ToString("C", culture)</dd>
         </dl>

@@ -1,4 +1,5 @@
 ﻿using HotelMVCIs.Models;
+using System;
 
 namespace HotelMVCIs.DTOs
 {
@@ -10,5 +11,12 @@ namespace HotelMVCIs.DTOs
         public int SpanDays { get; set; }
         public ReservationStatus Status { get; set; }
         public int LaneIndex { get; set; }
+
+        // ====== NOVÉ VLASTNOSTI PRO DETAILNÍ NÁPOVĚDU ======
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+        public int NumberOfGuests { get; set; }
+        public decimal GrandTotal { get; set; }
+        public decimal TotalPaid { get; set; }
     }
 }

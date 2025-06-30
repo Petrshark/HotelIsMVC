@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
-using HotelMVCIs.DTOs;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using HotelMVCIs.DTOs;
+using HotelMVCIs.Services;
 using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RoomsController : Controller
     {
         private readonly RoomService _roomService;
@@ -18,25 +19,20 @@ namespace HotelMVCIs.Controllers
             _roomTypeService = roomTypeService;
         }
 
-        // GET: Rooms
         public async Task<IActionResult> Index()
         {
-            var data = await _roomService.GetAllAsync();
-            return View(data);
+            return View(await _roomService.GetAllAsync());
         }
 
-        // GET: Rooms/Create
         public async Task<IActionResult> Create()
         {
-            var types = await _roomTypeService.GetAllAsync();
             var model = new RoomDTO
             {
-                RoomTypesList = new SelectList(types, "Id", "Name")
+                RoomTypesList = new SelectList(await _roomTypeService.GetAllAsync(), "Id", "Name")
             };
             return View(model);
         }
 
-        // POST: Rooms/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RoomDTO dto)
@@ -46,63 +42,41 @@ namespace HotelMVCIs.Controllers
                 await _roomService.CreateAsync(dto);
                 return RedirectToAction(nameof(Index));
             }
-
-            var types = await _roomTypeService.GetAllAsync();
-            dto.RoomTypesList = new SelectList(types, "Id", "Name", dto.RoomTypeId);
+            dto.RoomTypesList = new SelectList(await _roomTypeService.GetAllAsync(), "Id", "Name", dto.RoomTypeId);
             return View(dto);
         }
 
-        // GET: Rooms/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
             var dto = await _roomService.GetByIdAsync(id.Value);
             if (dto == null) return NotFound();
-
-            var types = await _roomTypeService.GetAllAsync();
-            dto.RoomTypesList = new SelectList(types, "Id", "Name", dto.RoomTypeId);
+            dto.RoomTypesList = new SelectList(await _roomTypeService.GetAllAsync(), "Id", "Name", dto.RoomTypeId);
             return View(dto);
         }
 
-        // POST: Rooms/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, RoomDTO dto)
         {
             if (id != dto.Id) return NotFound();
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    await _roomService.UpdateAsync(dto);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await _roomService.ExistsAsync(dto.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
+                await _roomService.UpdateAsync(dto);
                 return RedirectToAction(nameof(Index));
             }
-
-            var types = await _roomTypeService.GetAllAsync();
-            dto.RoomTypesList = new SelectList(types, "Id", "Name", dto.RoomTypeId);
+            dto.RoomTypesList = new SelectList(await _roomTypeService.GetAllAsync(), "Id", "Name", dto.RoomTypeId);
             return View(dto);
         }
 
-        // GET: Rooms/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var roomToDelete = await _roomService.GetRoomForDeleteAsync(id.Value);
-
-            if (roomToDelete == null) return NotFound();
-            return View(roomToDelete);
+            var room = await _roomService.GetRoomForDeleteAsync(id.Value);
+            if (room == null) return NotFound();
+            return View(room);
         }
 
-        // POST: Rooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

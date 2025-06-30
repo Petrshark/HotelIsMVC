@@ -63,6 +63,11 @@
     .day-grid-cell {
         flex: 1;
         border-right: 1px solid #e9ecef;
+        transition: background-color 0.2s ease-in-out;
+    }
+    .day-grid-cell:hover {
+        background-color: #e9f5ff;
+        cursor: pointer;
     }
     .day-grid-cell:last-child {
         border-right: none;
@@ -87,7 +92,7 @@
         border: 1px solid rgba(0,0,0,0.2);
         text-decoration: none;
     }
-    .reservation-bar.status-confirmed { background-color: #28a745; }
+    .reservation-bar.status-confirmed { background-color: #198754; }
     .reservation-bar.status-checkedin { background-color: #0d6efd; }
     .reservation-bar.status-checkedout { background-color: #6c757d; }
     .reservation-bar.status-cancelled { background-color: #dc3545; text-decoration: line-through; }
@@ -152,14 +157,13 @@
                                 var dayClass = "";
                                 if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) dayClass = "day-sat";
 
-                                // Místo <div> teď použijeme <a> tag, který vede na vytvoření rezervace
-                                <a asp-controller="Reservations" 
-                                    asp-action="Create" 
-                                    asp-route-roomId="@roomRow.RoomId" 
-                                    asp-route-checkInDate="@date.ToString("yyyy-MM-dd")" 
-                                    class="day-grid-cell @dayClass"
-                                    title="Vytvořit rezervaci pro @date.ToShortDateString()">
-                                </a>
+                                    <a asp-controller="Reservations" 
+                                       asp-action="Create" 
+                                       asp-route-roomId="@roomRow.RoomId" 
+                                       asp-route-checkInDate="@date.ToString("yyyy-MM-dd")" 
+                                       class="day-grid-cell @dayClass"
+                                       title="Vytvořit rezervaci pro @date.ToShortDateString()">
+                                    </a>
                             }
                             </div>
 
@@ -170,11 +174,25 @@
                             var widthPercent = ((double)res.SpanDays / daysInMonth) * 100;
                             var statusClass = "status-" + res.Status.ToString().ToLower();
 
-                                    <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@res.ReservationId" class="reservation-bar @statusClass"
-                                       style="top: @(topPosition)px; left: @(leftPercent.ToString("F4", CultureInfo.InvariantCulture))%; width: @(widthPercent.ToString("F4", CultureInfo.InvariantCulture))%;" 
-                                       title="@res.GuestName (@res.Status)">
-                                @res.GuestName
-                                    </a>
+                            // Sestavíme obsah pro naši nápovědu (popover)
+                            var popoverContent = $"Příjezd: <strong>{res.CheckInDate:d.M.yyyy}</strong><br>" +
+                                                 $"Odjezd: <strong>{res.CheckOutDate:d.M.yyyy}</strong><br>" +
+                                                 $"Hostů: <strong>{res.NumberOfGuests}</strong><hr class='my-1'>" +
+                                                 $"Celkem: <strong>{res.GrandTotal:C0}</strong><br>" +
+                                                 $"Zaplaceno: <strong class='text-success'>{res.TotalPaid:C0}</strong><br>" +
+                                                 $"Zbývá: <strong class='text-danger'>{res.GrandTotal - res.TotalPaid:C0}</strong>";
+
+            <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@res.ReservationId" 
+               class="reservation-bar @statusClass"
+               style="top: @(topPosition)px; left: @(leftPercent.ToString("F4", CultureInfo.InvariantCulture))%; width: @(widthPercent.ToString("F4", CultureInfo.InvariantCulture))%;" 
+               data-bs-toggle="popover" 
+               data-bs-trigger="hover"
+               data-bs-html="true"
+               data-bs-placement="top"
+               title="@res.GuestName (@res.Status)"
+               data-bs-content="@popoverContent">
+                                @* Vnitřek je prázdný, aby byl blok jen barevný *@
+            </a>
                         }
                         </td>
                     </tr>
@@ -182,3 +200,13 @@
         </tbody>
     </table>
 </div>
+
+@section Scripts {
+        <script>
+            // Tento skript najde všechny prvky s atributem data-bs-toggle="popover" a aktivuje je
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+}

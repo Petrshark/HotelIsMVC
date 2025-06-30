@@ -1,0 +1,26 @@
+﻿@model HotelMVCIs.Models.AppUser
+
+@{
+    ViewData["Title"] = "Smazat uživatele";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3 class="text-danger">Opravdu si přejete smazat tohoto uživatele?</h3>
+<div>
+    <h4>Uživatel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Jméno</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Email)</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Smazat definitivně" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Zrušit</a>
+    </form>
+</div>

@@ -1,35 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
+﻿using HotelMVCIs.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize] // Vyžaduje přihlášení pro přístup k rezervačnímu grafu.
     public class BookingChartController : Controller
     {
-        private readonly BookingChartService _chartService;
+        private readonly BookingChartService _chartService; // Injektovaná služba pro data grafu.
 
         public BookingChartController(BookingChartService chartService)
         {
             _chartService = chartService;
         }
 
+        // Akce pro zobrazení hlavního rezervačního grafu (GET).
+        // Přijímá volitelné parametry 'year' a 'month' pro navigaci mezi měsíci.
         public async Task<IActionResult> Index(int? year, int? month)
         {
-            DateTime dateToShow;
+            // Určí datum pro zobrazení grafu (aktuální měsíc, pokud není zadán).
+            DateTime dateToShow = (year.HasValue && month.HasValue)
+                ? new DateTime(year.Value, month.Value, 1)
+                : DateTime.Today;
 
-            if (year.HasValue && month.HasValue)
-            {
-                dateToShow = new DateTime(year.Value, month.Value, 1);
-            }
-            else
-            {
-                // Zjednodušená verze: Vždy zobrazit aktuální měsíc
-                dateToShow = DateTime.Now;
-            }
+            // Získá data pro graf ze služby.
+            var chartData = await _chartService.GetBookingChartAsync(dateToShow);
 
-            var chartData = await _chartService.GetChartDataAsync(dateToShow.Year, dateToShow.Month);
-            return View(chartData);
+            return View(chartData); // Předá data pohledu.
         }
     }
 }

@@ -7,24 +7,24 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<h3 class="text-danger">Opravdu si přejete smazat tento pokoj?</h3>
+<h3>Opravdu si přejete smazat tento pokoj?</h3>
 <div>
     <h4>Pokoj</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-3">Číslo pokoje</dt>
-        <dd class="col-sm-9">@Model.RoomNumber</dd>
+        <dt class = "col-sm-3">Číslo pokoje</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.RoomNumber)</dd>
 
-        <dt class="col-sm-3">Typ pokoje</dt>
-        <dd class="col-sm-9">@Model.RoomType.Name</dd>
+        <dt class = "col-sm-3">Typ pokoje</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.RoomType.Name)</dd>
 
-        <dt class="col-sm-3">Cena za noc</dt>
-        <dd class="col-sm-9">@Model.PricePerNight.ToString("C", new CultureInfo("cs-CZ"))</dd>
+        <dt class = "col-sm-3">Cena za noc</dt>
+        <dd class = "col-sm-9">@Model.PricePerNight.ToString("C", new CultureInfo("cs-CZ"))</dd>
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Smazat" class="btn btn-danger" />
-        <a asp-action="Index" class="btn btn-secondary">Zrušit</a>
+        <input type="submit" value="Smazat" class="btn btn-danger" /> |
+        <a asp-action="Index">Zpět na seznam</a>
     </form>
 </div>

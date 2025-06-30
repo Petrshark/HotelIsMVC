@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
+﻿using HotelMVCIs.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize(Roles = "Admin,Účetní")] // Přístup pouze pro role Admin a Účetní.
     public class ReportsController : Controller
     {
         private readonly PaymentService _paymentService;
@@ -14,12 +16,14 @@ namespace HotelMVCIs.Controllers
             _paymentService = paymentService;
         }
 
+        // Zobrazí platební report pro zadané datumové rozmezí (nebo aktuální měsíc).
         public async Task<IActionResult> PaymentReport(DateTime? startDate, DateTime? endDate)
         {
             ViewData["Title"] = "Report plateb";
 
-            var end = endDate ?? DateTime.Today;
-            var start = startDate ?? end.AddDays(-7);
+            var today = DateTime.Today;
+            var start = startDate ?? new DateTime(today.Year, today.Month, 1);
+            var end = endDate ?? today;
 
             var reportData = await _paymentService.GetPaymentReportAsync(start, end);
 

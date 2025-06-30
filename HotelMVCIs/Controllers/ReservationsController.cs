@@ -1,17 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
-using HotelMVCIs.DTOs;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using HotelMVCIs.ViewModels;
-using HotelMVCIs.Data;
 using Microsoft.EntityFrameworkCore;
+using HotelMVCIs.Data;
+using HotelMVCIs.DTOs;
 using HotelMVCIs.Models;
+using HotelMVCIs.Services;
+using HotelMVCIs.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Globalization;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize(Roles = "Admin,Recepční")]
     public class ReservationsController : Controller
     {
         private readonly ReservationService _reservationService;
@@ -39,27 +40,18 @@ namespace HotelMVCIs.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var reservations = await _reservationService.GetAllAsync();
-            return View(reservations);
+            return View(await _reservationService.GetAllAsync());
         }
 
-        // GET: Reservations/Create
-        // Metoda nyní přijímá volitelné parametry z rezervační tabule
-        public async Task<IActionResult> Create(int? roomId, DateTime? checkInDate)
+        public async Task<IActionResult> Create(int? roomId, System.DateTime? checkInDate)
         {
             var dto = new ReservationDTO();
-
-            // Pokud jsme dostali parametry z odkazu, předvyplníme je do DTO
-            if (roomId.HasValue)
-            {
-                dto.RoomId = roomId.Value;
-            }
+            if (roomId.HasValue) dto.RoomId = roomId.Value;
             if (checkInDate.HasValue)
             {
                 dto.CheckInDate = checkInDate.Value;
-                dto.CheckOutDate = checkInDate.Value.AddDays(1); // Nastavíme odjezd na další den
+                dto.CheckOutDate = checkInDate.Value.AddDays(1);
             }
-
             await PopulateDropdowns(dto);
             return View(dto);
         }
@@ -68,10 +60,10 @@ namespace HotelMVCIs.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ReservationDTO dto)
         {
-            var selectedRoom = await _roomService.GetRoomForDeleteAsync(dto.RoomId);
-            if (selectedRoom != null && dto.NumberOfGuests > selectedRoom.RoomType.Capacity)
+            var room = await _context.Rooms.Include(r => r.RoomType).FirstOrDefaultAsync(r => r.Id == dto.RoomId);
+            if (room != null && dto.NumberOfGuests > room.RoomType.Capacity)
             {
-                ModelState.AddModelError("NumberOfGuests", $"Počet hostů překračuje kapacitu pokoje ({selectedRoom.RoomType.Capacity}).");
+                ModelState.AddModelError("NumberOfGuests", $"Počet hostů překračuje kapacitu pokoje ({room.RoomType.Capacity}).");
             }
             if (dto.CheckOutDate <= dto.CheckInDate)
             {
@@ -96,21 +88,20 @@ namespace HotelMVCIs.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-
             var reservation = await _context.Reservations
-                .Include(r => r.ReservationItems)
-                    .ThenInclude(ri => ri.HotelService)
+                .Include(r => r.ReservationItems).ThenInclude(ri => ri.HotelService)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(r => r.Id == id.Value);
 
             if (reservation == null) return NotFound();
 
-            var reservationDto = await _reservationService.GetByIdForEditAsync(id.Value);
+            var reservationDto = await _reservationService.GetByIdAsync(id.Value);
+            if (reservationDto == null) return NotFound();
 
             var allServices = await _hotelServiceService.GetAllAsync();
             var availableServices = allServices
-                                .Where(s => s.IsActive)
-                                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = $"{s.Name} ({s.Price:C})" });
+                .Where(s => s.IsActive && !reservation.ReservationItems.Any(rs => rs.HotelServiceId == s.Id))
+                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = $"{s.Name} ({s.Price:C})" });
 
             var accommodationPrice = reservation.TotalPrice;
             var servicesPrice = reservation.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
@@ -139,42 +130,25 @@ namespace HotelMVCIs.Controllers
         public async Task<IActionResult> Edit(int id, [Bind(Prefix = "Reservation")] ReservationDTO reservationDto)
         {
             if (id != reservationDto.Id) return NotFound();
-
-            // Zde by měla být plná validace, jako v Create akci
             if (ModelState.IsValid)
             {
-                try
-                {
-                    await _reservationService.UpdateAsync(reservationDto);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await _reservationService.ExistsAsync(id))
-                        return NotFound();
-                    else
-                        throw;
-                }
+                await _reservationService.UpdateAsync(reservationDto);
                 return RedirectToAction(nameof(Edit), new { id = reservationDto.Id });
             }
-            return await Edit(id); // Znovu načteme a zobrazíme stránku s chybami
+            return await Edit(id);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddServiceToReservation(int reservationId, int serviceToAddId, int serviceToAddQuantity)
         {
-            if (serviceToAddQuantity < 1)
-            {
-                TempData["ErrorMessage"] = "Počet musí být alespoň 1.";
-                return RedirectToAction(nameof(Edit), new { id = reservationId });
-            }
-            var service = await _hotelServiceService.GetByIdAsync(serviceToAddId);
+            var service = await _context.HotelServices.FindAsync(serviceToAddId);
             if (service == null) return NotFound();
 
             var existingItem = await _context.ReservationItems.FirstOrDefaultAsync(ri => ri.ReservationId == reservationId && ri.HotelServiceId == serviceToAddId);
             if (existingItem != null)
             {
-                existingItem.Quantity += serviceToAddQuantity;
+                existingItem.Quantity += serviceToAddQuantity > 0 ? serviceToAddQuantity : 1;
             }
             else
             {
@@ -182,7 +156,7 @@ namespace HotelMVCIs.Controllers
                 {
                     ReservationId = reservationId,
                     HotelServiceId = serviceToAddId,
-                    Quantity = serviceToAddQuantity,
+                    Quantity = serviceToAddQuantity > 0 ? serviceToAddQuantity : 1,
                     PricePerItem = service.Price
                 });
             }
@@ -221,10 +195,8 @@ namespace HotelMVCIs.Controllers
 
         private async Task PopulateDropdowns(ReservationDTO dto)
         {
-            var guests = await _guestService.GetAllAsync();
-            var rooms = await _roomService.GetAllAsync();
-            dto.GuestsList = new SelectList(guests.Select(g => new { g.Id, FullName = $"{g.FirstName} {g.LastName}" }), "Id", "FullName", dto.GuestId);
-            dto.RoomsList = new SelectList(rooms.Select(r => new { r.Id, DisplayText = $"{r.RoomNumber} ({r.RoomType.Name})" }), "Id", "DisplayText", dto.RoomId);
+            dto.GuestsList = await _guestService.GetAllAsync().ContinueWith(t => t.Result.Select(g => new SelectListItem { Value = g.Id.ToString(), Text = $"{g.FirstName} {g.LastName}" }));
+            dto.RoomsList = await _roomService.GetAllAsync().ContinueWith(t => t.Result.Select(r => new SelectListItem { Value = r.Id.ToString(), Text = $"{r.RoomNumber} ({r.RoomType.Name})" }));
         }
     }
 }

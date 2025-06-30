@@ -1,6 +1,7 @@
 ﻿using HotelMVCIs.Data;
 using HotelMVCIs.DTOs;
 using HotelMVCIs.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,10 @@ namespace HotelMVCIs.Services
     public class ReservationService
     {
         private readonly HotelMVCIsDbContext _context;
-        private readonly PaymentService _paymentService;
 
-        public ReservationService(HotelMVCIsDbContext context, PaymentService paymentService)
+        public ReservationService(HotelMVCIsDbContext context)
         {
             _context = context;
-            _paymentService = paymentService;
         }
 
         public async Task<IEnumerable<ReservationDTO>> GetAllAsync()
@@ -26,58 +25,37 @@ namespace HotelMVCIs.Services
                 .Include(r => r.Guest)
                 .Include(r => r.Room).ThenInclude(room => room.RoomType)
                 .Include(r => r.ReservationItems)
+                .Include(r => r.Payments)
                 .OrderByDescending(r => r.CheckInDate)
                 .ToListAsync();
 
-            var reservationIds = reservations.Select(r => r.Id).ToList();
-
-            var payments = await _context.Payments
-                .Where(p => reservationIds.Contains(p.ReservationId))
-                .GroupBy(p => p.ReservationId)
-                .Select(g => new { ReservationId = g.Key, TotalPaid = g.Sum(p => p.Amount) })
-                .ToDictionaryAsync(x => x.ReservationId, x => x.TotalPaid);
-
-            var reservationDTOs = reservations.Select(reservation =>
+            return reservations.Select(r =>
             {
-                var servicesPrice = reservation.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
-                var grandTotal = reservation.TotalPrice + servicesPrice;
-                payments.TryGetValue(reservation.Id, out var totalPaid);
+                var servicesPrice = r.ReservationItems.Sum(ri => ri.Quantity * ri.PricePerItem);
+                var grandTotal = r.TotalPrice + servicesPrice;
+                var totalPaid = r.Payments.Sum(p => p.Amount);
 
                 return new ReservationDTO
                 {
-                    Id = reservation.Id,
-                    GuestFullName = $"{reservation.Guest.FirstName} {reservation.Guest.LastName}",
-                    RoomNumber = reservation.Room.RoomNumber,
-                    RoomTypeName = reservation.Room.RoomType.Name,
-                    CheckInDate = reservation.CheckInDate,
-                    CheckOutDate = reservation.CheckOutDate,
+                    Id = r.Id,
+                    GuestFullName = $"{r.Guest.FirstName} {r.Guest.LastName}",
+                    RoomNumber = r.Room.RoomNumber,
+                    RoomTypeName = r.Room.RoomType.Name,
+                    CheckInDate = r.CheckInDate,
+                    CheckOutDate = r.CheckOutDate,
                     TotalPrice = grandTotal,
-                    Status = reservation.Status,
-                    RemainingBalance = grandTotal - totalPaid
+                    RemainingBalance = grandTotal - totalPaid,
+                    Status = r.Status
                 };
             }).ToList();
-
-            return reservationDTOs;
         }
 
-        public async Task<bool> IsRoomAvailableAsync(int roomId, DateTime checkIn, DateTime checkOut, int? reservationIdToExclude = null)
+        public async Task<ReservationDTO?> GetByIdAsync(int id)
         {
-            var query = _context.Reservations
-                .Where(r => r.RoomId == roomId &&
-                            r.Status != ReservationStatus.Cancelled &&
-                            r.CheckInDate < checkOut &&
-                            r.CheckOutDate > checkIn);
+            var reservation = await _context.Reservations
+                .AsNoTracking()
+                .FirstOrDefaultAsync(r => r.Id == id);
 
-            if (reservationIdToExclude.HasValue)
-            {
-                query = query.Where(r => r.Id != reservationIdToExclude.Value);
-            }
-            return !await query.AnyAsync();
-        }
-
-        public async Task<ReservationDTO?> GetByIdForEditAsync(int id)
-        {
-            var reservation = await _context.Reservations.FindAsync(id);
             if (reservation == null) return null;
 
             return new ReservationDTO
@@ -95,9 +73,9 @@ namespace HotelMVCIs.Services
         public async Task<Reservation?> GetByIdForDeleteAsync(int id)
         {
             return await _context.Reservations
-               .Include(r => r.Guest)
-               .Include(r => r.Room).ThenInclude(room => room.RoomType)
-               .FirstOrDefaultAsync(r => r.Id == id);
+                .Include(r => r.Guest)
+                .Include(r => r.Room).ThenInclude(room => room.RoomType)
+                .FirstOrDefaultAsync(r => r.Id == id);
         }
 
         public async Task<int> CreateAsync(ReservationDTO dto)
@@ -108,8 +86,6 @@ namespace HotelMVCIs.Services
             var nights = (dto.CheckOutDate - dto.CheckInDate).Days;
             if (nights <= 0) nights = 1;
 
-            var totalPrice = nights * room.PricePerNight;
-
             var reservation = new Reservation
             {
                 GuestId = dto.GuestId,
@@ -117,10 +93,9 @@ namespace HotelMVCIs.Services
                 CheckInDate = dto.CheckInDate,
                 CheckOutDate = dto.CheckOutDate,
                 NumberOfGuests = dto.NumberOfGuests,
-                TotalPrice = totalPrice,
-                Status = dto.Status
+                Status = dto.Status,
+                TotalPrice = room.PricePerNight * nights
             };
-
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
             return reservation.Id;
@@ -129,24 +104,24 @@ namespace HotelMVCIs.Services
         public async Task UpdateAsync(ReservationDTO dto)
         {
             var reservation = await _context.Reservations.FindAsync(dto.Id);
-            var room = await _context.Rooms.FindAsync(dto.RoomId);
-            if (reservation == null || room == null) return;
+            if (reservation != null)
+            {
+                var room = await _context.Rooms.FindAsync(dto.RoomId);
+                if (room == null) return;
+                var numberOfNights = (dto.CheckOutDate - dto.CheckInDate).Days;
+                if (numberOfNights <= 0) numberOfNights = 1;
 
-            var nights = (dto.CheckOutDate - dto.CheckInDate).Days;
-            if (nights <= 0) nights = 1;
+                reservation.GuestId = dto.GuestId;
+                reservation.RoomId = dto.RoomId;
+                reservation.CheckInDate = dto.CheckInDate;
+                reservation.CheckOutDate = dto.CheckOutDate;
+                reservation.NumberOfGuests = dto.NumberOfGuests;
+                reservation.Status = dto.Status;
+                reservation.TotalPrice = room.PricePerNight * numberOfNights;
 
-            var roomPrice = nights * room.PricePerNight;
-
-            reservation.GuestId = dto.GuestId;
-            reservation.RoomId = dto.RoomId;
-            reservation.CheckInDate = dto.CheckInDate;
-            reservation.CheckOutDate = dto.CheckOutDate;
-            reservation.NumberOfGuests = dto.NumberOfGuests;
-            reservation.Status = dto.Status;
-            reservation.TotalPrice = roomPrice; // Ukládáme VŽDY jen cenu za ubytování
-
-            _context.Update(reservation);
-            await _context.SaveChangesAsync();
+                _context.Update(reservation);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteAsync(int id)
@@ -159,9 +134,19 @@ namespace HotelMVCIs.Services
             }
         }
 
-        public async Task<bool> ExistsAsync(int id)
+        public async Task<bool> IsRoomAvailableAsync(int roomId, DateTime checkIn, DateTime checkOut, int? reservationIdToExclude = null)
         {
-            return await _context.Reservations.AnyAsync(e => e.Id == id);
+            var query = _context.Reservations
+                .Where(r => r.RoomId == roomId &&
+                            r.Status != ReservationStatus.Cancelled &&
+                            r.CheckInDate < checkOut &&
+                            r.CheckOutDate > checkIn);
+
+            if (reservationIdToExclude.HasValue)
+            {
+                query = query.Where(r => r.Id != reservationIdToExclude.Value);
+            }
+            return !await query.AnyAsync();
         }
     }
 }

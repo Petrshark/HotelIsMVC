@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic;
 
 namespace HotelMVCIs.Models
 {
@@ -8,10 +8,10 @@ namespace HotelMVCIs.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Název služby je povinný.")]
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Cena je povinná.")]
+        [Required]
         [Column(TypeName = "decimal(10, 2)")]
         [Range(0.01, 100000.00)]
         public decimal Price { get; set; }

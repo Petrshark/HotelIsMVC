@@ -1,22 +1,455 @@
+/* Globální CSS promìnné - pøepíše výchozí promìnné Bootstrapu */
+:root {
+    /* Hlavní paleta - Jemné a Luxusní tóny */
+    --bs-primary: #1a2d52; /* Hluboká safírová modrá */
+    --bs-primary-rgb: 26, 45, 82;
+    --bs-secondary: #c7c7c7; /* Jemná, svìtlá šedá/taupe */
+    --bs-secondary-rgb: 199, 199, 199;
+    --bs-success: #5cb85c; /* Mírnì tlumená zelená */
+    --bs-success-rgb: 92, 184, 92;
+    --bs-info: #5bc0de; /* Klidná modrá */
+    --bs-info-rgb: 91, 192, 222;
+    --bs-warning: #f0ad4e; /* Teplá oranžová/žlutá */
+    --bs-warning-rgb: 240, 173, 78;
+    --bs-danger: #d9534f; /* Klidná èervená */
+    --bs-danger-rgb: 217, 83, 79;
+    --bs-light: #f8f9fa; /* Velmi svìtlá neutrální šedá */
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark: #1a2d52; /* Tmavé pozadí navigace, stejné jako primární */
+    --bs-dark-rgb: 26, 45, 82;
+    /* Barvy pozadí a textu pro svìtlý režim */
+    --bs-body-color: #444444; /* Tmavì šedý text pro èitelnost */
+    --bs-body-bg: #fdfdfd; /* Velmi svìtlá, témìø krémová bílá */
+    --bs-heading-color: #333333; /* Tmavší nadpisy */
+    /* Zaoblení - jemné a konzistentní */
+    --bs-border-radius: 0.375rem; /* Standardní jemné zaoblení (odpovídá Bootstrap rounded-2) */
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.5rem; /* Mírnì vìtší zaoblení pro karty */
+    /* Stíny - velmi jemné */
+    --bs-box-shadow: 0 .05rem .15rem rgba(0, 0, 0, .05);
+    --bs-box-shadow-sm: 0 .025rem .075rem rgba(0, 0, 0, .03);
+    --bs-box-shadow-lg: 0 .25rem .5rem rgba(0, 0, 0, .08);
+    --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, .03);
+}
+
 html {
-  font-size: 14px;
+    font-size: 15px; /* Mírnì vìtší základní font */
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Nastavení základní barvy textu pro tìlo */
 body {
-  margin-bottom: 60px;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    line-height: 1.6; /* Pro lepší èitelnost delších textù */
+}
+
+/* Barva nadpisù */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-heading-color);
+    font-weight: 600; /* Jemnì silnìjší */
+}
+
+/* Focus stavy pro interaktivní prvky */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), .3) !important; /* Mírnì výraznìjší focus */
+}
+
+/* Hlavièka a navigace */
+header {
+    box-shadow: var(--bs-box-shadow-sm);
+    z-index: 1030;
+}
+
+.navbar {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: var(--bs-dark) !important; /* Hluboká modrá navigace */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Velmi jemný okraj */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem; /* Vìtší a výraznìjší logo */
+    color: white !important;
+    letter-spacing: 0.05em; /* Jemné rozšíøení písmen */
+}
+
+/* Navigaèní odkazy */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important; /* Svìtlejší bílá pro text */
+    font-weight: 500;
+    padding: 0.6rem 1.1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: white !important;
+    }
+
+/* Dropdown menu v navigaci */
+.dropdown-menu {
+    background-color: var(--bs-dark);
+    border-color: rgba(var(--bs-secondary-rgb), 0.2);
+    border-radius: var(--bs-border-radius);
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 400;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background-color: var(--bs-primary) !important; /* Primární barva pøi najetí */
+        color: white !important;
+    }
+
+.dropdown-divider {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Hlavní obsah */
+main {
+    padding-top: 2rem; /* Vìtší horní padding */
+    padding-bottom: 2rem;
+}
+
+/* Formuláøové prvky */
+.form-control, .form-select, .form-check-input {
+    border-radius: var(--bs-border-radius);
+    border-color: var(--bs-secondary);
+    background-color: white;
+    color: var(--bs-body-color);
+    padding: 0.65rem 0.75rem; /* Jemnì upravený padding */
+}
+
+    .form-control::placeholder {
+        color: rgba(var(--bs-body-color), 0.6);
+    }
+
+    .form-control:focus, .form-select:focus {
+        background-color: white;
+        color: var(--bs-body-color);
+        border-color: var(--bs-primary);
+    }
+
+/* Specifické pro form-floating */
+.form-floating > .form-control,
+.form-floating > .form-select {
+    padding: 1rem 0.75rem;
+}
+
+.form-floating > label {
+    padding: 1rem 0.75rem;
+    color: rgba(var(--bs-body-color), 0.7);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    color: var(--bs-primary);
+}
+
+/* Tlaèítka */
+.btn {
+    border-radius: var(--bs-border-radius); /* Jemné zaoblení */
+    font-weight: 600;
+    padding: 0.8rem 1.4rem; /* Vìtší padding pro lepší dojem */
+    transition: all 0.25s ease-in-out; /* Plynulejší pøechod */
+    letter-spacing: 0.02em; /* Jemné rozšíøení písmen */
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #122140; /* Mírnì tmavší primární pøi najetí */
+        border-color: #122140;
+    }
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    color: white;
+}
+
+    .btn-success:hover {
+        background-color: #4CAF50; /* Mírnì tmavší zelená */
+        border-color: #4CAF50;
+    }
+
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: white;
+}
+
+    .btn-danger:hover {
+        background-color: #c44743; /* Mírnì tmavší èervená */
+        border-color: #c44743;
+    }
+
+.btn-secondary {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    color: var(--bs-body-color); /* Tmavý text na sekundární barvì */
+}
+
+    .btn-secondary:hover {
+        background-color: #b0b0b0; /* Mírnì tmavší šedá */
+        border-color: #b0b0b0;
+        color: var(--bs-body-color);
+    }
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--bs-primary);
+        color: white;
+    }
+
+
+/* Tabulky */
+.table {
+    border-radius: var(--bs-border-radius-lg); /* Vìtší zaoblení celé tabulky */
+    overflow: hidden;
+    box-shadow: var(--bs-box-shadow-sm); /* Jemný stín */
+    background-color: white; /* Bílý podklad */
+    border: 1px solid rgba(0,0,0,0.05); /* Jemný okraj tabulky */
+}
+
+    .table th, .table td {
+        padding: 1rem; /* Vìtší padding v buòkách */
+        vertical-align: middle;
+        border-color: rgba(0,0,0,0.08) !important; /* Jemnìjší okraje bunìk */
+    }
+
+    .table thead th {
+        background-color: var(--bs-light);
+        color: var(--bs-heading-color);
+        border-bottom-width: 2px;
+        border-color: rgba(0,0,0,0.15) !important;
+        font-weight: 600;
+    }
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(var(--bs-light-rgb), 0.4) !important; /* Jemnìjší proužky */
+}
+
+.table-hover > tbody > tr:hover > * {
+    background-color: var(--bs-light) !important; /* Zvýraznìní pøi najetí */
+}
+
+
+/* KARTY */
+.card {
+    border-radius: var(--bs-border-radius-lg);
+    box-shadow: var(--bs-box-shadow);
+    border-color: rgba(0,0,0,0.08); /* Jemný okraj */
+    background-color: white;
+    color: var(--bs-body-color);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    border-radius: calc(var(--bs-border-radius-lg) - 1px) calc(var(--bs-border-radius-lg) - 1px) 0 0;
+    font-weight: 600;
+    color: white; /* Bílý text v barevných hlavièkách */
+    background-color: var(--bs-primary); /* Defaultní pro card-header, pokud není bg-class */
+}
+    /* Specifické pro barevné card-header */
+    .card-header.bg-success {
+        background-color: var(--bs-success) !important;
+    }
+
+    .card-header.bg-danger {
+        background-color: var(--bs-danger) !important;
+    }
+
+
+/* Sekce ErrorView */
+.text-danger {
+    color: var(--bs-danger) !important;
+}
+
+    .text-danger h1 {
+        color: var(--bs-danger) !important;
+    }
+
+.text-muted {
+    color: var(--bs-secondary) !important;
+}
+
+
+/* BookingChart specifické styly */
+.booking-chart-container {
+    background-color: white;
+    border-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+    border-radius: var(--bs-border-radius-lg);
+    box-shadow: var(--bs-box-shadow);
+}
+
+.booking-chart {
+    border-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+}
+
+    .booking-chart th, .booking-chart td {
+        border-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+    }
+
+    .booking-chart thead th {
+        background-color: var(--bs-light); /* Svìtlejší pozadí hlavièek */
+        color: var(--bs-heading-color);
+    }
+
+.room-header-cell {
+    background-color: var(--bs-light); /* Svìtlé pozadí sticky hlavièky pokoje */
+    color: var(--bs-heading-color);
+    box-shadow: 2px 0 2px -2px rgba(0, 0, 0, 0.08);
+}
+
+    .room-header-cell small {
+        color: var(--bs-secondary) !important;
+    }
+
+.day-sat, .day-sun, .day-weekend {
+    background-color: rgba(var(--bs-secondary-rgb), 0.1) !important; /* Jemnìjší zbarvení víkendù */
+}
+
+.day-today {
+    box-shadow: inset 0 0 0 2px var(--bs-primary) !important;
+}
+
+.day-grid-cell {
+    border-right-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+}
+
+    .day-grid-cell:hover {
+        background-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+    }
+
+.reservation-bar {
+    border-color: rgba(0,0,0,0.15) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: white; /* Udržet bílý text na barevných pruzích */
+}
+
+    .reservation-bar:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    /* Styly pro statusy rezervací - mapování na Bootstrap promìnné */
+    .reservation-bar.status-confirmed {
+        background-color: var(--bs-success);
+        border-color: var(--bs-success);
+    }
+
+    .reservation-bar.status-checkedin {
+        background-color: var(--bs-info);
+        border-color: var(--bs-info);
+    }
+
+    .reservation-bar.status-checkedout {
+        background-color: var(--bs-secondary);
+        border-color: var(--bs-secondary);
+    }
+
+    .reservation-bar.status-cancelled {
+        background-color: var(--bs-danger);
+        border-color: var(--bs-danger);
+        text-decoration: line-through;
+    }
+
+    .reservation-bar.status-option {
+        background-color: var(--bs-warning);
+        border-color: var(--bs-warning);
+    }
+
+
+/* Vykreslování textu v hlavièce navigaèní lišty */
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* Ikona hamburgeru ve svìtlejší bílé */
+}
+
+/* MEDIA QUERIES PRO LEPŠÍ RESPONSIVITU */
+@media (max-width: 767.98px) { /* Extra small to small devices */
+    html {
+        font-size: 13px;
+    }
+
+    .booking-chart thead th,
+    .booking-chart tbody td {
+        font-size: 0.7rem;
+    }
+
+        .booking-chart thead th small {
+            display: block;
+        }
+
+    .room-header-cell {
+        width: 90px;
+        min-width: 90px;
+    }
+
+    .booking-chart th:not(.room-header-cell), .booking-chart td.timeline-cell .day-grid-cell {
+        min-width: 25px;
+    }
+
+    .reservation-bar {
+        height: 22px;
+        font-size: 0.65rem;
+        padding: 0 3px;
+    }
+
+    .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 575.98px) { /* Very small devices */
+    html {
+        font-size: 12px;
+    }
+
+    .booking-chart thead th,
+    .booking-chart tbody td {
+        font-size: 0.6rem;
+    }
+
+    .room-header-cell {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .booking-chart th:not(.room-header-cell), .booking-chart td.timeline-cell .day-grid-cell {
+        min-width: 20px;
+    }
+
+    .reservation-bar {
+        height: 18px;
+        font-size: 0.55rem;
+        padding: 0 2px;
+    }
+
+    .btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
 }

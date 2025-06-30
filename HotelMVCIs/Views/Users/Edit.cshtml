@@ -1,0 +1,44 @@
+﻿@model HotelMVCIs.ViewModels.UserEditVM
+
+@{
+    ViewData["Title"] = "Upravit uživatele";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group mb-3">
+                <label class="form-label">Uživatelské jméno (login)</label>
+                <input value="@Model.Email" class="form-control" disabled />
+                <small class="form-text text-muted">Uživatelské jméno (login) je svázané s emailem a nelze ho přímo měnit.</small>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <small class="form-text text-muted">Vyplňte pouze v případě, že chcete změnit heslo.</small>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Uložit změny</button>
+                <a asp-action="Index" class="btn btn-secondary">Zpět na seznam</a>
+            </div>
+        </form>
+    </div>
+</div>

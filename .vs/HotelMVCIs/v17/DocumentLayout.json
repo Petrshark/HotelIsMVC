@@ -3,24 +3,332 @@
   "WorkspaceRootPath": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\bookingchart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\bookingchart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\roomtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\roomtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roomtypes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roomtypes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roomtypes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roomtypes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\usereditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\usereditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roomtypes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roomtypes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roomtypes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roomtypes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\rooms\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\rooms\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\rooms\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\rooms\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\rooms\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\rooms\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\rooms\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\rooms\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\roles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\roles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\reservations\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\reservations\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\reservations\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\reservations\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\reservations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\reservations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\reports\\paymentreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\reports\\paymentreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\payments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\payments\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\payments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\payments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\payments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\payments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\hotelservices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\hotelservices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\hotelservices\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\hotelservices\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\hotelservices\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\hotelservices\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\hotelservices\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\hotelservices\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\guests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\guests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\guests\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\guests\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\guests\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\guests\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\guests\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\guests\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\rolemodificationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\rolemodificationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\roleeditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\roleeditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\reservationeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\reservationeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\hotelserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\hotelserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\services\\bookingchartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\services\\bookingchartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\reservationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\reservationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\roomtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\roomtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\roomrowdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\roomrowdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\roomdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\roomdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\reservationspandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\reservationspandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\paymentreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\paymentreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\hotelservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\hotelservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\guestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\guestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\dto\\bookingchartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\dto\\bookingchartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\roomtypescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\roomtypescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\hotelmvcisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\hotelmvcisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|c:\\users\\petrc\\source\\repos\\hotelmvcis\\hotelmvcis\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CBC2916-CF90-4475-92C9-AE9423D54558}|HotelMVCIs\\HotelMVCIs.csproj|solutionrelative:hotelmvcis\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\Views\\Rooms\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\Views\\Reservations\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\Views\\RoomTypes\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationItemDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\DTO\\ReservationItemDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\UserDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\DTO\\UserDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoleDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\DTO\\RoleDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\DTO\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelMVCIs\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,59 +338,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 193,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PaymentService.cs",
-              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\PaymentService.cs",
-              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\PaymentService.cs",
-              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\PaymentService.cs",
-              "RelativeToolTip": "HotelMVCIs\\Services\\PaymentService.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAADwv88AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T06:57:55.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PaymentsController.cs",
-              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\PaymentsController.cs",
-              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\PaymentsController.cs",
-              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\PaymentsController.cs",
-              "RelativeToolTip": "HotelMVCIs\\Controllers\\PaymentsController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T06:56:02.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAqwDMAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-27T06:55:19.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PaymentReport.cshtml",
-              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
-              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
-              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
-              "RelativeToolTip": "HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAcwDoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-27T06:54:20.034Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -92,10 +352,989 @@
               "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\ReportsController.cs",
               "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\ReportsController.cs",
               "RelativeToolTip": "HotelMVCIs\\Controllers\\ReportsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T06:53:33.829Z",
+              "WhenOpened": "2025-06-30T00:29:38.857Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "HotelMVCIs\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "HotelMVCIs\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-29T19:44:04.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "HotelMVCIs\\Controllers\\ReservationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:53:01.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\RolesController.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "HotelMVCIs\\Controllers\\RolesController.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAcwH8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:30:17.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\RoomTypes\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\RoomTypes\\Delete.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:08:01.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Program.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Program.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Program.cs",
+              "RelativeToolTip": "HotelMVCIs\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAcwDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:24:58.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:04:42.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserEditVM.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\UserEditVM.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\UserEditVM.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\UserEditVM.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\UserEditVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:55:16.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\BookingChart\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\BookingChart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\BookingChart\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\BookingChart\\Index.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAcwHMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:12:25.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\RoomTypes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\RoomTypes\\Edit.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:13:38.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\RoomTypes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\RoomTypes\\Create.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:07:16.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Rooms\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Rooms\\Index.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwCMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:14:06.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoomTypeService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\RoomTypeService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\RoomTypeService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\RoomTypeService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\RoomTypeService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAIwFIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:49:35.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Rooms\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Rooms\\Edit.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:14:31.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAcwEUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T19:32:56.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Rooms\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Rooms\\Delete.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAcwB0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:07:31.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\RoomTypes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\RoomTypes\\Index.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:13:09.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Rooms\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Rooms\\Create.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:06:20.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Roles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Roles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Roles\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Roles\\Edit.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAcwEcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:14:10.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Roles\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Roles\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Roles\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Roles\\Delete.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:13:55.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reservations\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reservations\\Index.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwEMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:12:49.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reservations\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reservations\\Edit.cshtml",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAcwJ0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:15:15.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reservations\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reservations\\Delete.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwCQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:11:37.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reservations\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reservations\\Create.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:06:05.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PaymentReport.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reports\\PaymentReport.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:10:46.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Payments\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Payments\\Edit.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAcwDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:09:43.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Payments\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Payments\\Delete.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwCQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:08:49.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Payments\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Payments\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Payments\\Create.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:07:53.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\HotelServices\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\HotelServices\\Index.cshtml",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:06:28.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\HotelServices\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\HotelServices\\Edit.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:06:13.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\HotelServices\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\HotelServices\\Delete.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:05:45.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\HotelServices\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\HotelServices\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\HotelServices\\Create.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAcwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:05:32.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:04:02.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Guests\\Index.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Index.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Guests\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwCQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:03:12.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Guests\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Edit.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Guests\\Edit.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:02:56.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Delete.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Guests\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Delete.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Guests\\Delete.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwB8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:02:40.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Create.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Guests\\Create.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Guests\\Create.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Guests\\Create.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAcwEUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T18:02:27.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAcwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T17:58:49.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RoleModificationVM.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\RoleModificationVM.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\RoleModificationVM.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\RoleModificationVM.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\RoleModificationVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:54:55.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RoleEditVM.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\RoleEditVM.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\RoleEditVM.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\RoleEditVM.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\RoleEditVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:54:26.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ReservationEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\ReservationEditViewModel.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\ReservationEditViewModel.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\ReservationEditViewModel.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\ReservationEditViewModel.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:53:50.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\LoginVM.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\LoginVM.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\LoginVM.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\LoginVM.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:53:07.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\ViewModels\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\ViewModels\\ErrorViewModel.cs",
+              "RelativeToolTip": "HotelMVCIs\\ViewModels\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:52:39.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "RoomService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\RoomService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\RoomService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\RoomService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\RoomService.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAIwFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:48:57.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\ReservationService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\ReservationService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\ReservationService.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAUwJcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:10:12.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\PaymentService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\PaymentService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\PaymentService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\PaymentService.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAcwM8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:47:40.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "HotelServiceService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\HotelServiceService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\HotelServiceService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\HotelServiceService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\HotelServiceService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAUwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:46:24.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "GuestService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\GuestService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\GuestService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\GuestService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\GuestService.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAUwFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:45:36.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "BookingChartService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\BookingChartService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\BookingChartService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\BookingChartService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\BookingChartService.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAcwGMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:05:26.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\RoomType.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\RoomType.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\RoomType.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\RoomType.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:44:12.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\Room.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Room.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\Room.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:43:53.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ReservationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\ReservationStatus.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\ReservationStatus.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\ReservationStatus.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\ReservationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:43:20.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ReservationItem.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\ReservationItem.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\ReservationItem.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\ReservationItem.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\ReservationItem.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:42:44.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Reservation.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\Reservation.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA5wCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:42:35.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "PaymentMethod.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\PaymentMethod.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\PaymentMethod.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\PaymentMethod.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\PaymentMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:42:01.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Payment.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\Payment.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:41:43.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "HotelService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\HotelService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\HotelService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\HotelService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\HotelService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA9wBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:41:28.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Guest.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\Guest.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\Guest.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\Guest.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA7wCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:41:14.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Models\\AppUser.cs",
+              "RelativeToolTip": "HotelMVCIs\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:40:59.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "RoomTypeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomTypeDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\RoomTypeDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomTypeDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\RoomTypeDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:39:18.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "RoomRowDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomRowDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\RoomRowDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomRowDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\RoomRowDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:39:06.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "RoomDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\RoomDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoomDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\RoomDTO.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:38:28.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "ReservationSpanDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationSpanDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\ReservationSpanDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationSpanDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\ReservationSpanDTO.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:38:11.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "ReservationDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\ReservationDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\ReservationDTO.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAswDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:37:58.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "PaymentReportDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\PaymentReportDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\PaymentReportDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\PaymentReportDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\PaymentReportDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA/wBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:37:09.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "PaymentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\PaymentDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\PaymentDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\PaymentDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\PaymentDTO.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAwwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:35:35.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "HotelServiceDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\HotelServiceDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\HotelServiceDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\HotelServiceDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\HotelServiceDTO.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAwwBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:35:37.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "GuestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\GuestDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\GuestDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\GuestDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\GuestDTO.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:35:10.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "BookingChartDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\BookingChartDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\BookingChartDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\BookingChartDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\BookingChartDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:34:45.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "HotelMVCIs\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAUwIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:18:25.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "RoomTypesController.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RoomTypesController.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\RoomTypesController.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RoomTypesController.cs",
+              "RelativeToolTip": "HotelMVCIs\\Controllers\\RoomTypesController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:31:12.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Controllers\\RoomsController.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Controllers\\RoomsController.cs",
+              "RelativeToolTip": "HotelMVCIs\\Controllers\\RoomsController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwFIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T17:30:44.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "HotelMVCIsDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\HotelMVCIsDbContext.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\HotelMVCIsDbContext.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\HotelMVCIsDbContext.cs",
+              "RelativeToolTip": "HotelMVCIs\\HotelMVCIsDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:28:22.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Details.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Rooms\\Details.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Rooms\\Details.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Rooms\\Details.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:14:52.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Details.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\Reservations\\Details.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\Reservations\\Details.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\Reservations\\Details.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:15:27.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T15:45:57.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Details.cshtml",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Views\\RoomTypes\\Details.cshtml",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Views\\RoomTypes\\Details.cshtml",
+              "RelativeToolTip": "HotelMVCIs\\Views\\RoomTypes\\Details.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T16:13:54.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "ReservationItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationItemDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\ReservationItemDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\ReservationItemDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\ReservationItemDTO.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:59:54.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\UserDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\UserDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\UserDTO.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:52:29.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "RoleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoleDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\RoleDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\RoleDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\RoleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:51:05.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\DTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\DTO\\LoginDTO.cs",
+              "RelativeToolTip": "HotelMVCIs\\DTO\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:49:56.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "HotelMVCIs\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\Services\\UserService.cs",
+              "RelativeToolTip": "HotelMVCIs\\Services\\UserService.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAowJEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:48:13.97Z"
             }
           ]
         }

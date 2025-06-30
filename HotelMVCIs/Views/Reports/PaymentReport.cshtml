@@ -13,11 +13,11 @@
     <div class="row align-items-end">
         <div class="col-md-3">
             <label asp-for="StartDate" class="form-label fw-bold"></label>
-            <input asp-for="StartDate" class="form-control" type="date" />
+            <input asp-for="StartDate" class="form-control" type="date" value="@Model.StartDate.ToString("yyyy-MM-dd")" />
         </div>
         <div class="col-md-3">
             <label asp-for="EndDate" class="form-label fw-bold"></label>
-            <input asp-for="EndDate" class="form-control" type="date" />
+            <input asp-for="EndDate" class="form-control" type="date" value="@Model.EndDate.ToString("yyyy-MM-dd")" />
         </div>
         <div class="col-md-3">
             <button type="submit" class="btn btn-primary">Zobrazit report</button>

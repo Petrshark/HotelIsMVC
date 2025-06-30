@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelMVCIs.Services;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using HotelMVCIs.DTOs;
-using Microsoft.EntityFrameworkCore;
+using HotelMVCIs.Services;
 using System.Threading.Tasks;
 
 namespace HotelMVCIs.Controllers
 {
+    [Authorize(Roles = "Admin")] // Přístup pouze pro roli Admin.
     public class HotelServicesController : Controller
     {
         private readonly HotelServiceService _service;
@@ -15,17 +16,19 @@ namespace HotelMVCIs.Controllers
             _service = service;
         }
 
+        // Zobrazí seznam všech hotelových služeb.
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAllAsync();
-            return View(data);
+            return View(await _service.GetAllAsync());
         }
 
+        // Zobrazí formulář pro vytvoření služby.
         public IActionResult Create()
         {
             return View();
         }
 
+        // Zpracovává vytvoření služby. Validuje DTO. Chrání před CSRF.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(HotelServiceDTO dto)
@@ -38,6 +41,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // Zobrazí formulář pro úpravu služby.
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -46,6 +50,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // Zpracovává úpravu služby. Validuje DTO. Chrání před CSRF.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, HotelServiceDTO dto)
@@ -54,22 +59,13 @@ namespace HotelMVCIs.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    await _service.UpdateAsync(dto);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await _service.ExistsAsync(dto.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
+                await _service.UpdateAsync(dto);
                 return RedirectToAction(nameof(Index));
             }
             return View(dto);
         }
 
+        // Zobrazí potvrzení smazání služby.
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -78,6 +74,7 @@ namespace HotelMVCIs.Controllers
             return View(dto);
         }
 
+        // Provede smazání služby. Chrání před CSRF.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

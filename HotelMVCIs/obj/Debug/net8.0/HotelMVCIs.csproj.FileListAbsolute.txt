@@ -1,3 +1,12 @@
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.csproj.AssemblyReference.cache
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.AssemblyInfoInputs.cache
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.AssemblyInfo.cs
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.csproj.CoreCompileInputs.cache
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.RazorAssemblyInfo.cache
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.RazorAssemblyInfo.cs
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.sourcelink.json
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\appsettings.json
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\HotelMVCIs.staticwebassets.runtime.json
@@ -10,6 +19,9 @@ C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\HotelMVCIs.pd
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Humanizer.dll
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -30,6 +42,8 @@ C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Ext
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
@@ -143,15 +157,6 @@ C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\runtimes\win\
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.csproj.AssemblyReference.cache
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.AssemblyInfoInputs.cache
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.AssemblyInfo.cs
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.csproj.CoreCompileInputs.cache
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.RazorAssemblyInfo.cache
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.RazorAssemblyInfo.cs
-C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\HotelMVCIs.sourcelink.json
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\scopedcss\bundle\HotelMVCIs.styles.css
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\petrc\source\repos\HotelMVCIs\HotelMVCIs\obj\Debug\net8.0\staticwebassets.development.json

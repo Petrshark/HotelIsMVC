@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MkristWcMjzK/SQpPbSzmF9qnKPwDPvnm/OMFFJw1M0=",
+  "Hash": "ciAIkQIJ42wmoxId1NQHCs1r1TnX7GgYjgxaeAj/INc=",
   "Source": "HotelMVCIs",
   "BasePath": "_content/HotelMVCIs",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "l6mj4myp8p",
+      "Integrity": "8wxRwxIqgiPlVMLZiQWSQEQXKy92eLaudM8SG6278HE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1279,51 +1279,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 24 Jun 2025 15:12:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1334,7 +1289,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "12829"
         },
         {
           "Name": "Content-Type",
@@ -1342,11 +1297,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"8wxRwxIqgiPlVMLZiQWSQEQXKy92eLaudM8SG6278HE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Jun 2025 15:12:20 GMT"
+          "Value": "Sun, 29 Jun 2025 20:04:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1356,7 +1311,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-8wxRwxIqgiPlVMLZiQWSQEQXKy92eLaudM8SG6278HE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.l6mj4myp8p.css",
+      "AssetFile": "C:\\Users\\petrc\\source\\repos\\HotelMVCIs\\HotelMVCIs\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8wxRwxIqgiPlVMLZiQWSQEQXKy92eLaudM8SG6278HE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 20:04:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l6mj4myp8p"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8wxRwxIqgiPlVMLZiQWSQEQXKy92eLaudM8SG6278HE="
         }
       ]
     },

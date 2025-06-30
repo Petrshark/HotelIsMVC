@@ -1,0 +1,72 @@
+﻿@using HotelMVCIs.Models
+@model HotelMVCIs.ViewModels.RoleEditVM
+
+@{
+    ViewData["Title"] = "Upravit roli";
+}
+
+<h1>Upravit roli: <span class="fw-light">@Model.Role.Name</span></h1>
+<hr />
+
+<a asp-action="Index" class="btn btn-secondary mb-3">Zpět na seznam rolí</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <input type="hidden" name="roleName" value="@Model.Role.Name" />
+    <input type="hidden" name="roleId" value="@Model.Role.Id" />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    Přidat do role '@Model.Role.Name'
+                </div>
+                <table class="table table-bordered table-sm mb-0">
+                    @if (Model.NonMembers.Count() == 0)
+                    {
+                            <tr><td class="p-2">Všichni uživatelé jsou již v této roli.</td></tr>
+                    }
+                    else
+                    {
+                        @foreach (AppUser user in Model.NonMembers)
+                        {
+                                    <tr>
+                                        <td class="p-2">@user.Name (@user.Email)</td>
+                                        <td style="width: 50px;" class="text-center">
+                                            <input type="checkbox" name="AddIds" value="@user.Id" class="form-check-input">
+                                        </td>
+                                    </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    Odebrat z role '@Model.Role.Name'
+                </div>
+                <table class="table table-bordered table-sm mb-0">
+                    @if (Model.Members.Count() == 0)
+                    {
+                            <tr><td class="p-2">Žádní uživatelé nejsou v této roli.</td></tr>
+                    }
+                    else
+                    {
+                        @foreach (AppUser user in Model.Members)
+                        {
+                                    <tr>
+                                        <td class="p-2">@user.Name (@user.Email)</td>
+                                        <td style="width: 50px;" class="text-center">
+                                            <input type="checkbox" name="DeleteIds" value="@user.Id" class="form-check-input">
+                                        </td>
+                                    </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Uložit změny</button>
+</form>
